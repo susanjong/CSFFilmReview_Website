@@ -12,14 +12,18 @@
             <div class="form-box">
                 <div class="front">
                     <h2>Login</h2>
-                    <form id="login-form">
+                    <form id="login-form" action="/Handling/sign-in.php" method="POST">
+                        <div class="input-field">
+                            <label for="login-username">Username</label>
+                            <input type="text" id="login-username" name="username" placeholder="Enter your username" required>
+                        </div>
                         <div class="input-field">
                             <label for="login-email">Email</label>
-                            <input type="email" id="login-email" placeholder="Enter your email">
+                            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="input-field">
                             <label for="login-password">Password</label>
-                            <input type="password" id="login-password" placeholder="Enter your password">
+                            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
                         </div>
                         <button type="submit">Login</button>
                         <p class="switch">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
@@ -27,18 +31,18 @@
                 </div>
                 <div class="back">
                     <h2>Sign-up</h2>
-                    <form id="signup-form">
+                    <form id="signup-form" action="/Handling/sign-up.php" method="POST">
                         <div class="input-field">
                             <label for="signup-username">Username</label>
-                            <input type="text" id="signup-username" placeholder="Enter your username">
+                            <input type="text" id="signup-username" name="username" placeholder="Enter your username" required>
                         </div>
                         <div class="input-field">
                             <label for="signup-email">Email</label>
-                            <input type="email" id="signup-email" placeholder="Enter your email">
+                            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="input-field">
                             <label for="signup-password">Password</label>
-                            <input type="password" id="signup-password" placeholder="Enter your password">
+                            <input type="password" id="signup-password" name="password" placeholder="Enter your password">
                         </div>
                         <button type="submit">Sign Up</button>
                         <p class="switch">Already have an account? <a href="#" id="show-login">Login</a></p>
