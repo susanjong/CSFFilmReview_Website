@@ -1,9 +1,13 @@
-document.getElementById('show-signup').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('.form-container').classList.add('flipped');
+const flipContainer = document.querySelector('.flip-container');
+const showSignUp = document.getElementById('show-sign-up');
+const showSignIn = document.getElementById('show-sign-in');
+
+showSignUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    flipContainer.classList.add('flipped');
 });
 
-document.getElementById('show-login').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('.form-container').classList.remove('flipped');
+showSignIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    flipContainer.classList.remove('flipped');
 });

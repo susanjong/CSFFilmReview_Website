@@ -3,55 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Sign-up Flip Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="sign.css">
+    <title>Sign In and Sign Up Menu</title>
 </head>
-<body>
-    <div class="container">
-        <div class="form-container">
-            <div class="form-box">
-                <div class="front">
-                    <h2>Login</h2>
-                    <form id="login-form" action="/Handling/sign-in.php" method="POST">
-                        <div class="input-field">
-                            <label for="login-username">Username</label>
-                            <input type="text" id="login-username" name="username" placeholder="Enter your username" required>
+
+<!--Masuk kedalam isi konten dengan menggunakn framweork tailwind css -->
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-blue-600">
+    <div class="w-full max-w-md flip-container custom-padding">
+        <div class="flip-box">
+            <div class="front">
+                <div id="sign-in-menu" class="bg-gray-800 rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold text-center text-white mb-6">Sign In</h2>
+                    <form id="sign-in-form" action="/Handling/sign-in.php" method="POST" class="space-y-6">
+                        <div>
+                            <label for="sign-in-email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="sign-in-email" name="email" placeholder="Enter your email" required class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div class="input-field">
-                            <label for="login-email">Email</label>
-                            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                        <div>
+                            <label for="sign-in-password" class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                            <input type="password" id="sign-in-password" name="password" placeholder="Enter your password" required class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div class="input-field">
-                            <label for="login-password">Password</label>
-                            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit">Login</button>
-                        <p class="switch">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+                        <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Sign In</button>
                     </form>
+                    <p class="text-center text-gray-400 mt-4">Don't have an account? <a href="#" id="show-sign-up" class="text-blue-400 hover:underline">Sign Up</a></p>
                 </div>
-                <div class="back">
-                    <h2>Sign-up</h2>
-                    <form id="signup-form" action="/Handling/sign-up.php" method="POST">
-                        <div class="input-field">
-                            <label for="signup-username">Username</label>
-                            <input type="text" id="signup-username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="back">
+                <div id="sign-up-menu" class="bg-gray-800 rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold text-center text-white mb-6">Sign Up</h2>
+                    <form id="sign-up-form" action="/Handling/sign-up.php" method="POST"class="space-y-6">
+                        <div>
+                            <label for="sign-up-username" class="block text-sm font-medium text-gray-300 mb-2">Username</label>
+                            <input type="text" id="sign-up-username" name="username" placeholder="Choose a username" required class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div class="input-field">
-                            <label for="signup-email">Email</label>
-                            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                        <div>
+                            <label for="sign-up-email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="sign-up-email" name="email" placeholder="Enter your email" required class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div class="input-field">
-                            <label for="signup-password">Password</label>
-                            <input type="password" id="signup-password" name="password" placeholder="Enter your password">
+                        <div>
+                            <label for="sign-up-password" class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                            <input type="password" id="sign-up-password" name="password" placeholder="Create a password" required class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <button type="submit">Sign Up</button>
-                        <p class="switch">Already have an account? <a href="#" id="show-login">Login</a></p>
+                        <div>
+                            <label for="sign-up-confirm-password" class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
+                            <input type="password" id="sign-up-confirm-password" name="confirm-password" placeholder="Confirm your password" required class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Sign Up</button>
                     </form>
+                    <p class="text-center text-gray-400 mt-4">Already have an account? <a href="#" id="show-sign-in" class="text-blue-400 hover:underline">Sign In</a></p>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="sign.js"></script>
+   
 </body>
 </html>
