@@ -61,7 +61,7 @@ if (!$result) {
         #reviewForm {
             display: none; 
             position: fixed;
-            width: 600px;
+            width: 700px;
             height: 600px;
             top: 15%; 
             left: 50%;
@@ -72,6 +72,7 @@ if (!$result) {
             border: 1px solid #ccc; 
             padding: 20px; 
             z-index: 100;
+            overflow: hidden;
         }
 
         #overlay {
@@ -84,23 +85,37 @@ if (!$result) {
             z-index: 1;   
         }
 
+        .reviewForm-container {
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between; 
+            height: 100%; 
+        }
+
         form {
             width: 100%; 
-            padding: 20px;
         }
 
         textarea {
-            width: 100%; 
-            width: 515px;
+            display: block;
+            width: 100%;
+            max-width: 100%;
             min-height: 250px;
             max-height: 250px;
-            margin-bottom: 5px; 
-            margin-top: 8px;
+            background-color: #b8dbff;
+            margin-top: 25px;
         }
 
-        label {
-            margin-top: 7px;
-            margin-bottom: 5px;;
+        .right-form {
+            width: 62%;
+            box-sizing: border-box;
+            padding:0;
+        }
+
+        .right-form h2{
+            display:block;
+            font-weight: 350;
+            font-size: 18px;
         }
 
         .close-button {
@@ -132,6 +147,25 @@ if (!$result) {
             background-color: #9a0909;
             box-shadow: 0 0 5px black;
         }
+
+        .rating {
+            display: inline-block;
+        }
+
+        .stars {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .star {
+            color: #b8dbff;
+            transition: color 0.2s;
+            font-size: 37px;
+        }
+
+        .star.active {
+            color: gold;
+        }
     </style>
 </head>
 <body>
@@ -158,7 +192,10 @@ if (!$result) {
         <input type="text" placeholder="Search Movie..." style="color: white;">
     </div>
     <div class="main-content">
-        <div class="poster"></div>
+        <div class="poster">
+
+        </div>
+
         <div class="details">
             <h1>AVENGERS: ENDGAME</h1>
             <div class="year">2019, Anthony Russo & Joe Russo</div>
@@ -182,44 +219,52 @@ if (!$result) {
             <p class="review">This movie is a DOPE! I've watched it 100x times a day.</p>
             <div class="rating">Rating: ★ ★ ★ ★ ★ 5.0</div>
         </div>
-        
-        <div class="review-item">
-            <h3 class="reviewer">Budi Kece</h3><p class="date">25 Apr 2024</p>
-            <p class="review">It's so boring ngl.</p>
-            <div class="rating">Rating: ★ ☆ ☆ ☆ ☆ 1.0</div>
-        </div>
-        <div class="review-item">
-            <h3 class="reviewer">Clar Yapping</h3><p class="date">29 Dec 2024</p>
-            <p class="review">The whole character is so cool. I want to be like Ironman. He's super selfless and cool. I love him 3000...</p>
-            <div class="rating">Rating: ★ ★ ★ ☆ ☆ 3.0</div>
-        </div>
 
         <div>
         <?php while ($row = pg_fetch_assoc($result)): ?>
             <div class="review-item">
                 <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
                 <p class="review"><?php echo htmlspecialchars($row['komentar']); ?></p>
-                <div class="rating">Rating: <?php echo str_repeat('★', $row['bintang']) . str_repeat('☆', 5 - $row['bintang']); ?> <?php echo number_format($row['bintang'], 1); ?></div>
+                <div class="rating">Rating: <?php echo str_repeat('★ ', $row['bintang']) . str_repeat('☆ ', 5 - $row['bintang']); ?> <?php echo number_format($row['bintang'], 1); ?></div>
             </div>
         <?php endwhile; ?>
         </div>
         
+        <!-- Upload Review Form -->
         <div id="overlay" style="display: none;"></div>
         <div id="reviewForm">
-        <h2 style="display: flex; justify-content:center; margin-top: 25px; font-weight: 350; font-size: 33px">Add Your Personal Review</h2>
-        <form action="#" method="post">
+            <div class="reviewForm-container">
+            <section class="left-form" style="width:35%;">
+                <img src="endgame.webp" style="width:220px;border-radius:20px;margin-top:30px;">
+            </section>
 
-            <label for="komentar" style="font-size: 20px">Review</label><br>
-            <textarea id="komentar" name="komentar" required></textarea><br><br>
+            <section class="right-form">
+                <h2 style="margin-top: 20px;">I've watched..</h2>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">AVENGERS: ENDGAME
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2019</span>
+                </h1>
+                <form action="#" method="post">
 
-            <label for="bintang" style="font-size: 20px">☆(1-5)&nbsp; </label>
-            <input type="number" id="bintang" name="bintang" min="1" max="5" required style="margin-bottom:17px;"><br><br>
+                    <textarea id="komentar" name="komentar" placeholder="Add your review.." required></textarea><br>
 
-            <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
-            <input type="submit" value="Submit" class="submitbutton">
-        </form>
+                    <div class="rating">
+                        <label for="bintang" style="font-size: 18px; margin-bottom: 0px">Rating</label>
+                        <div class="stars">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="bintang" name="bintang" required><br><br>
+                    </div>
+
+                    <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
+                    <input type="submit" value="Submit" class="submitbutton">
+                </form>
+            </section>
+            </div>
         </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -250,6 +295,41 @@ if (!$result) {
             }
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('bintang');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', selectStars);
+            star.addEventListener('mouseout', unselectStars);
+            star.addEventListener('click', setRating);
+        });
+
+        function selectStars(e) {
+            const selectedValue = e.target.dataset.value;
+            stars.forEach(star => {
+            star.classList.toggle('active', star.dataset.value <= selectedValue);
+            });
+        }
+
+        function unselectStars() {
+            stars.forEach(star => {
+            star.classList.remove('active');
+            });
+            const savedRating = ratingInput.value;
+            if (savedRating) {
+            stars.forEach(star => {
+                star.classList.toggle('active', star.dataset.value <= savedRating);
+            });
+            }
+        }
+
+        function setRating(e) {
+            const ratingValue = e.target.dataset.value;
+            ratingInput.value = ratingValue;
+            selectStars(e);
+        }
+        });
     </script>
 </body>
 </html>
