@@ -3,16 +3,14 @@ session_start(); // Start the session at the very top
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if username, email, and password are set
-    if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
-        $username = $_POST['username'];
+    // Check email, and password are set
+    if (isset($_POST['email'], $_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // Check if the user exists by username and email
-        $sql = "SELECT * FROM users WHERE username = :username AND email = :email";
+        // Check if the user exists by email
+        $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -28,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit(); // Stop the script after redirecting
         } else {
             // Handle invalid login
-            echo "Invalid username, email, or password.";
+            echo "Invalid email, or password.";
         }
     } else {
         // Handle case where form fields are missing
