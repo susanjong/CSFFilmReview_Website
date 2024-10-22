@@ -6,34 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <title>Sign In and Sign Up Menu</title>
 </head>
 
 <!--Masuk kedalam isi konten dengan menggunakn framweork tailwind css -->
-
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-blue-600">
     <div class="w-full max-w-md flip-container custom-padding">
         <div class="flip-box">
             <div class="front">
                 <div id="sign-in-menu" class="bg-gray-800 rounded-xl shadow-lg p-8">
                     <h2 class="text-3xl font-bold text-center text-white mb-6">Sign In</h2>
+                    <h4 class="typewriter text-sm font-medium text-center text-gray-300 mb-4">Welcome, please sign in so you can enter your account</h4>
                     <form id="sign-in-form" action="/Handling/sign-in.php" method="POST" class="space-y-6">
-                        <div>
+                        
+                        <!--untuk buat isi email di sign in -->
+                        <div class="input-container">
                             <label for="sign-in-email"
                                 class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                <i class="fa-solid fa-envelope"></i> <!-- Ikon untuk email -->
                             <input type="email" id="sign-in-email" name="email" placeholder="Enter your email" required
                                 class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div>
+                        <div class="input-container">
                             <label for="sign-in-password"
                                 class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                                <i class="fa-solid fa-lock"></i> <!--ikon untuk password -->
                             <input type="password" id="sign-in-password" name="password"
                                 placeholder="Enter your password" required
                                 class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
 
                         <!--Untuk membuat menu remember the password dan lupa password menu -->
-
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
                                 <input id="remember-me" type="checkbox"
@@ -103,36 +108,54 @@
             <div class="back">
                 <div id="sign-up-menu" class="bg-gray-800 rounded-xl shadow-lg p-8">
                     <h2 class="text-3xl font-bold text-center text-white mb-6">Sign Up</h2>
+                
                     <form id="sign-up-form" action="/Handling/sign-up.php" method="POST" class="space-y-6">
-                        <div>
-                            <label for="sign-up-username"
-                                class="block text-sm font-medium text-gray-300 mb-2">Username</label>
+        
+                            <!--untuk membuat icon makanya dibuat class input-container-->
+                            <div class="input-container">
+                            <label for="sign-up-username" class="block text-sm font-medium text-gray-300 mb-2">Username</label>
+                            <i class="fas fa-user"></i> <!-- Ikon untuk username -->
                             <input type="text" id="sign-up-username" name="username" placeholder="Enter a your username"
                                 required
                                 class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div>
-                            <label for="sign-up-email"
-                                class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                      
+                            <div class="input-container">
+                            <label for="sign-up-email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <i class="fa-solid fa-envelope"></i> <!-- Ikon untuk email -->
                             <input type="email" id="sign-up-email" name="email" placeholder="Enter your email" required
                                 class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div>
+                        <div class="input-container">
                             <label for="sign-up-password"
                                 class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                                <i class="fa-solid fa-lock"></i> <!--ikon untuk password -->
                             <input type="password" id="sign-up-password" name="password" placeholder="Create a password"
                                 required
                                 class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
-                        <div>
+                        <div class="input-container">
                             <label for="sign-up-confirm-password"
                                 class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
+                                <i class="fa-solid fa-lock"></i> <!--ikon untuk password -->
                             <input type="password" id="sign-up-confirm-password" name="confirm-password"
                                 placeholder="Confirm your password" required
                                 class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
+
+                         <!--Untuk membuat menu remember the password-->
+                         <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember-me" type="checkbox"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded ">
+                                <label for="remember-me" class="ml-2 block text-sm text-gray-300">
+                                    Remember Me
+                                </label>
+                            </div>  
+                        </div>
+
                         <button type="submit"
-                            class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Sign
+                            class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300  mt-5">Sign
                             Up</button>
                     </form>
                     <p class="text-center text-gray-400 mt-4">Already have an account? <a href="#" id="show-sign-in"
