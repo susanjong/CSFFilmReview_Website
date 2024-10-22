@@ -1,3 +1,4 @@
+/*untuk mengatur tombol" pada saat klik dapat berubah sesuai keinginan kita*/
 const flipContainer = document.querySelector('.flip-container');
 const showSignUp = document.getElementById('show-sign-up');
 const showSignIn = document.getElementById('show-sign-in');
