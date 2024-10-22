@@ -27,14 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit(); // Stop the script after redirecting
         } else {
             // Handle invalid login
-            echo "Invalid email, or password.";
+            header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/sign_form/sign.html?error=invalid_credentials");
+            exit();
         }
-    } else {
-        // Handle case where form fields are missing
-        echo "Please fill in all fields.";
     }
-} else {
-    // Handle case where the request method is not POST
-    echo "Invalid request method.";
 }
 ?>

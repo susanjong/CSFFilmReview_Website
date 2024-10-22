@@ -6,7 +6,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect input data
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);  // Hash the password
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password'];
+
+    if ($password !== $confirm_password) {
+        // Passwords do not match, handle the error
+        header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/sign_form/sign.html?error=password_mismatch");
+        exit();
+    }
+
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Check if username already exists
     $sql_check_username = "SELECT * FROM users WHERE username = :username";
@@ -22,20 +31,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt_check_username->rowCount() > 0) {
         // Username exists, handle the error
-        echo "Username already exists. Please choose a different one.";
+        header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/sign_form/sign.html?error=username_exists");
+        exit();
     } elseif ($stmt_check_email->rowCount() > 0) {
         // Email exists, handle the error
-        echo "Email already exists. Please choose a different one.";
+        header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/sign_form/sign.html?error=email_exists");
+        exit();
     } else {
         // Insert the new user since both username and email are unique
         $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':password', $hashed_password);
         $stmt->execute();
         
-        echo "Registration successful!";
+        header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/sign_form/sign.html?success=registration_successful");
     }
 }
 ?>
