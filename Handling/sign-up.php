@@ -15,6 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    if (!preg_match('/^[a-zA-Z0-9._%+-]+@gmail\.com$/', $email)) {
+        header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/sign_form/sign.html?error=invalid_email");
+        exit();
+    }    
+
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Check if username already exists
