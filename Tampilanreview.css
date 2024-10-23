@@ -107,7 +107,7 @@ input:checked ~.slide{
     left: 0;
     background-color: #111;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 20px; /*ini dibuat untuk mengatur ukuran dari tata letak sidebar*/
     margin-left: 300px;
 }
 
@@ -127,7 +127,7 @@ input:checked ~.slide{
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: black;
+    background-color: rgb(50, 48, 48);
     color: white;
     margin: 0;
     padding: 0;
