@@ -98,7 +98,7 @@ input:checked ~.slide{
     height: 100%;
  }
 
-.sidebar {
+ .sidebar {
     height: 100%;
     width: 0;
     position: absolute;
