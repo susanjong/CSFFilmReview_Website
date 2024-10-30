@@ -139,16 +139,16 @@ h4 {
     display: grid; /* Mengubah menjadi grid */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Atur tiga kolom dengan lebar minimal 300px */
     gap: 1px; 
-    justify-items: center; /* Posisi card di tengah */
+    justify-items: center; 
 }
 
 /* Gaya untuk judul konten */
 .content-title {
-    font-size: 28px; /* Ukuran font judul */
-    font-weight: bold; /* Tebal */
-    color: #fff; /* Warna teks */
-    margin-bottom: 200%; /* Jarak bawah untuk memberikan ruang dengan kartu */
-    text-align: center; /* Rata tengah */
+    font-size: 28px; 
+    font-weight: bold; 
+    color: #fff; 
+    margin-bottom: 200%; 
+    text-align: center; 
     padding: 20px;
 }
 
@@ -157,7 +157,7 @@ h4 {
     font-size: 24px; 
     font-weight: bold; 
     color: #fff; 
-    margin: 20px 0 15px 0; /* Tambahkan margin atas untuk memberikan jarak */
+    margin: 20px 0 15px 0;
     text-align: center; 
     background-color: rgba(0, 0, 0, 0.7); 
     padding: 20px; 
