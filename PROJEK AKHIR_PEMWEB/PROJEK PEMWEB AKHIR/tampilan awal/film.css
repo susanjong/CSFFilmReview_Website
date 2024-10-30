@@ -21,6 +21,7 @@ header{
     align-items: center;
     position: relative;
     z-index: 100;
+    font-size: 20px;
 }
 
 header a{
@@ -30,16 +31,17 @@ header a{
     transition: 0.2s;
 }
 
+/*ini untuk bagian background di home*/
 a.active{
-    background: #14ff72cb;
+    background: #0066cc;
     border-radius: 2px;
 }
 
+/*navbar untuk dijadin hover*/
 header a:hover{
-    background: #14ff72cb;
+    background: #39a2f3;
     border-radius: 2px;
 }
-
 
 .dropdown {
     position: relative;
@@ -106,13 +108,17 @@ header a:hover{
 
 .slider .list .item .content .title,
 .slider .list .item .content .type{
-    font-size: 5em;
+    font-size: 4em;
     font-weight: bold;
     line-height: 1.3em;
 }
-.slider .list .item .type{
-    color: #14ff72cb;
+
+/*ini untuk tulisan dibuat warna*/
+.slider .list .item .content .type {
+    color: #d9ce05;
+    font-size: 25px; 
 }
+
 .slider .list .item .button{
     display: grid;
     grid-template-columns: repeat(2, 130px);
@@ -140,9 +146,10 @@ header a:hover{
     color: #eee;
 }
 
-
-
-
+.description {
+    font-size: 20px;
+    word-break: break-all; /* Memotong kata yang terlalu panjang */
+}
 
 /* Thumbnail Section  */
 .thumbnail{
@@ -187,7 +194,7 @@ header a:hover{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #14ff72cb;
+    background-color: #0066cc;
     border: none;
     color: #fff;
     font-family: monospace;
@@ -238,8 +245,6 @@ header a:hover{
 }
 
 
-
-
 /* Animation for next button click */
 .slider.next .list .item:nth-child(1) img{
     width: 150px;
@@ -269,7 +274,6 @@ header a:hover{
     z-index: 100;
 }
 
-
 @keyframes showThumbnail{
     from{
         width: 0;
@@ -287,7 +291,6 @@ header a:hover{
         transform: translateX(150px);
     }
 }
-
 
 
 /* Animation for prev button click */
