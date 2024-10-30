@@ -22,7 +22,8 @@
 .checkbox {
     display: none; 
     visibility: hidden; 
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
+    appearance: none;
 }
 .toggle {
     position: absolute;
@@ -192,6 +193,7 @@ body {
     font-size: 38px;
     background: linear-gradient(to right, #FFD700, #c3a602);
     -webkit-background-clip: text; 
+    background-clip: none ;
     color: transparent;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     margin-right: 8px; 
