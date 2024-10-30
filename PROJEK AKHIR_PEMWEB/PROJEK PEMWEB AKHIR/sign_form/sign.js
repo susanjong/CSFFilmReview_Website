@@ -13,7 +13,10 @@ if (error) {
         errorMessage = 'Username already exists. Please choose a different one.';
     } else if (error === 'email_exists') {
         errorMessage = 'Email already exists. Please choose a different one.';
+    }else if (error === 'invalid_email') {
+        errorMessage = 'Please use a valid Gmail address.';
     }
+    
 
     // Display the alert with the error message
     if (errorMessage) {
