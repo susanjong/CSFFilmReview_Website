@@ -293,7 +293,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_review.php', {
+                fetch('delete_endgame.php', {
                     method: 'POST',
                     body: params
                 })
