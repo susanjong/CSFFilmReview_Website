@@ -39,8 +39,6 @@ header {
     justify-content: center; /* Pusatkan konten secara horizontal */
     align-items: center; /* Pusatkan konten secara vertikal */
     width: 100%;
-    background-color: #0066cc;
-
 }
 
 .logo {

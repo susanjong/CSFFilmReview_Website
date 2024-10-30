@@ -69,37 +69,37 @@ try {
 </head>
 
 <body>
-    <header>
-        <section class="header-center">
-            <div id="sidebar" class="sidebar">
-                <label>
-                    <input type="checkbox" class="checkbox" id="toggle">
-                    <div class="toggle">
-                        <span class="top_line common"></span>
-                        <span class="middle_line common"></span>
-                        <span class="bottom_line common"></span>
-                    </div>
-                    <div class="slide">
-                        <p class="Close">Close</p><br>
-                        <a href="#"><i class="fas fa-home"></i>&nbsp Homepage</a>
-                        <a href="#"><i class="fas fa-film"></i>&nbsp Genre</a>
-                        <a href="#"><i class="fas fa-list"></i>&nbsp Movie List</a>
-                        <a href="#"><i class="fas fa-star"></i>&nbsp Reviews</a>
-                        <a href="#"><i class="fas fa-sync"></i>&nbsp Updates</a>
-                        <a href="#"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
-                    </div>
-                </label>
-            </div>
-        
+<header>
+    <section class="header-center">
+        <div id="sidebar" class="sidebar">
+            <label>
+                <input type="checkbox" class="checkbox" id="toggle">
+                <div class="toggle">
+                    <span class="top_line common"></span>
+                    <span class="middle_line common"></span>
+                    <span class="bottom_line common"></span>
+                </div>
+                <div class="slide">
+                    <p class="Close">Close</p>
+                    <a href="#"><i class="fas fa-home"></i>&nbsp Homepage</a>
+                    <a href="#"><i class="fas fa-film"></i>&nbsp Genre</a>
+                    <a href="#"><i class="fas fa-list"></i>&nbsp Movie List</a>
+                    <a href="#"><i class="fas fa-star"></i>&nbsp Reviews</a>
+                    <a href="#"><i class="fas fa-sync"></i>&nbsp Updates</a>
+                    <a href="#"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
+                </div>
+            </label>
+        </div>
+    
 
-            <div class="box">
-                <input type="text" placeholder="Search Movie...">
-                <i class="fas fa-search" style = "color: #45525f;"></i>
-            </div>                
-        </section>
+        <div class="box">
+            <input type="text" placeholder="Search Movie...">
+            <i class="fas fa-search" style = "color: #45525f;"></i>
+        </div>                
+    </section>
 
-        <div class="logo">CSFFilmReview</div>
-    </header>
+    <div class="logo">CSFFilmReview</div>
+</header>
 
     <div class="main-content">
         <div class="poster">
@@ -293,7 +293,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_review.php', {
+                fetch('delete_endgame.php', {
                     method: 'POST',
                     body: params
                 })

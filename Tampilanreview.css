@@ -16,7 +16,8 @@
 .Close {
     color: white;
     font-size: 20px; 
-    font-weight: bold; 
+    font-weight: bold;
+    font-family: 'Kanit'; 
     text-align: center; 
     padding: 10px 0; 
     margin-top: 10px;
@@ -113,6 +114,7 @@ input:checked ~.slide{
 }
 
 .sidebar a {
+    font-family: 'Kanit';
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
