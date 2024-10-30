@@ -1,0 +1,26 @@
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-socials .soc-icon:hover {
+    color: #ff6347;
+}
