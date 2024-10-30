@@ -17,7 +17,7 @@ body {
 
 /* Background hanya untuk halaman pertama */
 .overview {
-    background-image: linear-gradient(rgba(38, 38, 38, 0.558), rgba(156, 149, 149, 0.353)), url("/asset/background.jpg");
+    background-image: linear-gradient(rgba(38, 38, 38, 0.558), rgba(156, 149, 149, 0.353)), url("/PROJEK-BUAT-WEB-FULLSTACK/asset/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -128,102 +128,131 @@ h4 {
     text-align: center;
 }
 
-/* Gaya untuk konten tambahan */
+/* Gaya untuk page kedua berissikan pengenalan anggota  */
 .content {
     background-image: linear-gradient(rgba(0, 0, 0, 0.829), rgba(11, 47, 253, 0.733));
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
-    height: 111vh;
-    position: relative;
-    color: black;
+    width: 93%;
+    padding: 50px;
+    display: grid; /* Mengubah menjadi grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Atur tiga kolom dengan lebar minimal 300px */
+    gap: 1px; 
+    justify-items: center; /* Posisi card di tengah */
 }
 
-.image-gallery {
+/* Gaya untuk judul konten */
+.content-title {
+    font-size: 28px; /* Ukuran font judul */
+    font-weight: bold; /* Tebal */
+    color: #fff; /* Warna teks */
+    margin-bottom: 200%; /* Jarak bawah untuk memberikan ruang dengan kartu */
+    text-align: center; /* Rata tengah */
+    padding: 20px;
+}
+
+/* Gaya untuk card */
+.card-title {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #fff; 
+    margin: 20px 0 15px 0; /* Tambahkan margin atas untuk memberikan jarak */
+    text-align: center; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px; 
+    border-radius: 5px; 
+    text-transform: uppercase; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.card {
+    width: 200px;
+    height: auto;
     display: flex;
-    justify-content: center; 
-    flex-wrap: wrap; 
-    margin-top: 5%; 
-    gap: 15px;
-    overflow: hidden;
-}
-
-.image-gallery img {
-    width: 150px; 
-    height: 250px; 
+    flex-direction: column;
+    align-items: center; 
     border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: 0.5s;
+    padding: 70px 10px 20px; 
+    position: relative; 
+    margin-top: 120%; 
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 1;
-    font-size: 24px;
-    margin: 0 20px;
-}
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+.card img {
+    width: 110px; 
+    height: 110px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    position: absolute; 
+    top: -50px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border: 5px solid #fff;
 }
 
-.fontpage2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 2em;
-        font-weight: 400;
-        font-family: "Poppins", sans-serif;
-        line-height: 1;
-        text-align: center;
-        position: absolute; 
-        top: 160%; 
-        left: 50%; 
-        transform: translate(-50%, -50%);
-    }
+.soc-icons {
+    gap: 10px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px;
+}
 
-    .btn-group {
-        display: flex; 
-        justify-content: center;
-        align-items: center;
-        justify-content: center; 
-        margin: 20px 0; 
-        position: absolute; 
-        top: -22%; 
-        left:0%; 
-        color:orange;
-    }
+.soc-icons i {
+    font-size: 25px; 
+    color: #858282;
+    border-radius: 5px; 
+    border: 1px solid #858282;
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: 0.5s;
+}
 
-    .btn-group2 {
-       
-        display: flex; 
-        justify-content: center;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 0;
-        position: absolute; 
-        top: 169%; 
-        left:36%; 
-        color:orange;
-    }
-    .btn-outline-orange {
-        color: orange; 
-        background-color: transparent; 
-    }
+.soc-icons i:hover{
+    color: #fff; 
+    background: #858282; 
+}
 
-    .btn-outline-orange:hover {
-        background-color: rgb(255, 166, 0); 
-    }
+.soc-icons a {
+    text-decoration: none; 
+}
 
-    .btn-check+ .btn-outline-orange {
-        background-color: orange; 
-        color: rgb(255, 255, 255); 
-        border: 2px solid rgb(255, 230, 103); 
-    }
+.name{
+    font-size: 20px; 
+    font-weight: 600; 
+    color: #333; 
+}
+
+.name i {
+    color: #313ef7; 
+}
+
+.description {
+    font-size: 14px; 
+    color: #858282; 
+    text-align: center; 
+}
+
+.subtitle {
+    font-size: 16px; 
+    color: #333; 
+    font-weight: 600;
+}
+
+.about-section {
+    padding: 0 25px;
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 15px; 
+}
+
+p {
+    margin: 5px 0; 
+    color: #858282;
+}
