@@ -79,12 +79,10 @@ try {
             </div>
             <div class="slide">
                 <p class="Close">Close</p>
-                    <a href="#">Homepage</a>
-                    <a href="#">Genre</a>
-                    <a href="#">Movie List</a>
-                    <a href="#">Reviews</a>
-                    <a href="#">Updates</a>
-                    <a href="#">Contact Us</a>
+                <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan%20awal/film.html">Homepage</a>
+                <a href="/Handling/display_reviews.php">Review</a>
+                <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/homepage/index.html">Contact Us</a>
+                <a href="/Handling/profile.php">Profile</a>
             </div>
         </label>
     </div>
@@ -110,10 +108,8 @@ try {
                 After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.
             </p>
             <div class="genre-tags">
-                <a class="btn btn-primary" href="#" role="button">Adventure</a>
-                <a class="btn btn-primary" href="#" role="button">Action</a>
-                <a class="btn btn-primary" href="#" role="button">Drama</a>
-                <a class="btn btn-primary" href="#" role="button">Fantasy</a>
+                <a class="btn btn-primary" href="/Genre/Action.html" role="button">Action</a>
+                <a class="btn btn-primary" href="/Genre/Drama.html" role="button">Drama</a>
             </div>
         </div>
     </div>

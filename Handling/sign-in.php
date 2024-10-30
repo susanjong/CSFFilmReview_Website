@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['id'];
 
             // Redirect to homepage
-            header("Location:/tampilanawal.html");
+            header("Location:/PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/tampilan%20awal/film.html");
 
             exit(); // Stop the script after redirecting
         } else {
