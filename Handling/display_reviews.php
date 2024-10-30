@@ -1,13 +1,13 @@
 <?php
-session_start(); // Make sure session is started
-include 'database.php'; // Ensure this file returns a PDO instance
+session_start(); // Pastikan session sudah dimulai
+include 'database.php'; // Pastikan file ini mengembalikan instance PDO
+include 'delete_review.php';
 
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $komentar = isset($_POST['komentar']) ? trim($_POST['komentar']) : '';
     $bintang = isset($_POST['bintang']) ? (int)$_POST['bintang'] : 0;
-
-    // Check if user is logged in
+    
     if (isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];
 
@@ -23,22 +23,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "<p>Komentar tidak boleh kosong.</p>";
         }
-    } else {
-        echo "<p>Silakan login untuk menambahkan review.</p>";
     }
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit;  
 }
 
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM endgame_review er JOIN users u ON er.user_id = u.id WHERE er.user_id = :id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM endgame_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
-    $stmt->bindParam(':id', $user_id);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-?>
 
+$average = ['rata_rata_bintang' => 0]; // Default value
+
+// Fetch the average rating
+try {
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM endgame_review";
+    $avgStmt = $conn->prepare($avgQuery);
+    $avgStmt->execute();
+    $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
+
+    // If no ratings exist, set default
+    if ($average === false || $average['rata_rata_bintang'] === null) {
+        $average['rata_rata_bintang'] = 0; // Set default if no average
+    }
+} catch (Exception $e) {
+    // Log the error message for debugging
+    error_log($e->getMessage());
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,9 +88,11 @@ if (isset($_SESSION['user_id'])) {
             </div>
         </label>
     </div>
+
     <div class="search-bar">
         <input type="text" placeholder="Search Movie..." style="color: white;">
     </div>
+
     <div class="main-content">
         <div class="poster">
 
@@ -85,7 +103,7 @@ if (isset($_SESSION['user_id'])) {
             <div class="year">2019, Anthony Russo & Joe Russo</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
-                <div class="starreview">5.0</div>
+                <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis">
@@ -120,6 +138,18 @@ if (isset($_SESSION['user_id'])) {
                             echo str_repeat('★ ', $row['bintang']) . str_repeat('☆ ', 5 - $row['bintang']); 
                             echo ' ' . number_format($row['bintang'], 1); 
                         ?>
+                        
+                        <?php if (isset($_SESSION['user_id']) && (int)$row['user_id'] === (int)$_SESSION['user_id']): ?>
+                            <svg width="24" height="24" class="editreview_button">
+                                <circle cx="12" cy="6" r="1.5"/>
+                                <circle cx="12" cy="12" r="1.5"/>
+                                <circle cx="12" cy="18" r="1.5"/>
+                            </svg>
+                            
+                            <div class="dropdown" style="display: none;">
+                                <button onclick="deleteReview(<?php echo $row['id']; ?>)">Delete</button>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -143,8 +173,8 @@ if (isset($_SESSION['user_id'])) {
 
                     <textarea id="komentar" name="komentar" placeholder="Add your review.." required></textarea><br>
 
-                    <div class="rating">
-                        <label for="bintang" style="font-size: 18px; margin-bottom: 0px">Rating</label>
+                    <div class="rating_">
+                        <label for="bintang" style="font-size: 18px; margin-right: 15px;">Rating</label>
                         <div class="stars">
                             <span class="star" data-value="1">&#9733;</span>
                             <span class="star" data-value="2">&#9733;</span>
@@ -152,8 +182,10 @@ if (isset($_SESSION['user_id'])) {
                             <span class="star" data-value="4">&#9733;</span>
                             <span class="star" data-value="5">&#9733;</span>
                         </div>
-                        <input type="hidden" id="bintang" name="bintang" required><br><br>
+                        <input type="hidden" id="bintang" name="bintang" required>
+                        <input type="hidden" name="reviewId" value="<?= $review ? $review['id'] : '' ?>">
                     </div>
+                    <br><br>      
 
                     <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
                     <input type="submit" value="Submit" class="submitbutton">
@@ -226,6 +258,49 @@ if (isset($_SESSION['user_id'])) {
             selectStars(e);
         }
         });
+
+        const starReviewElement = document.getElementById('averageRating');
+
+        const averageRating = <?php echo json_encode(number_format($average['rata_rata_bintang'], 1)); ?>;
+        starReviewElement.innerText = averageRating;
+
+        document.querySelectorAll('.editreview_button').forEach(button => {
+            button.addEventListener('click', toggleDropdown);
+        });
+
+        function toggleDropdown(event) {
+            const dropdown = event.target.nextElementSibling; 
+            const isVisible = dropdown.style.display === 'block';
+            
+            document.querySelectorAll('.dropdown').forEach(d => {
+                d.style.display = 'none';
+            });
+            
+            dropdown.style.display = isVisible ? 'none' : 'block';
+            event.stopPropagation(); 
+        }
+
+        function deleteReview(reviewId) {
+                if (confirm("Apakah Anda yakin ingin menghapus review ini?")) {
+                const params = new URLSearchParams();
+                params.append('reviewId', reviewId);
+
+                fetch('delete_review.php', {
+                    method: 'POST',
+                    body: params
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    location.reload(); // Refresh halaman setelah penghapusan
+                })
+               
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("Terjadi kesalahan saat menghapus review.");
+                });
+            }
+        }
     </script>
 </body>
 </html>
