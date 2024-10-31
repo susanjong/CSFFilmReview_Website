@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <section class="header-center">
+        <div id="sidebar" class="sidebar">
+            <label>
+                <input type="checkbox" class="checkbox" id="toggle">
+                <div class="toggle">
+                    <span class="top_line common"></span>
+                    <span class="middle_line common"></span>
+                    <span class="bottom_line common"></span>
+                </div>
+                <div class="slide">
+                    <p class="Close">Close</p><br>
+                    <a href="#"><i class="fas fa-home"></i>&nbsp Homepage</a>
+                    <a href="#"><i class="fas fa-film"></i>&nbsp Genre</a>
+                    <a href="#"><i class="fas fa-list"></i>&nbsp Movie List</a>
+                    <a href="#"><i class="fas fa-star"></i>&nbsp Reviews</a>
+                    <a href="#"><i class="fas fa-sync"></i>&nbsp Updates</a>
+                    <a href="#"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
+                </div>
+            </label>
+        </div>
+    
+
+        <div class="box">
+            <input type="text" id="searchInput" placeholder="Search Movie...">
+            <i class="fas fa-search" style = "color: #45525f;"></i>
+        </div>                
+    </section>
+
+    <div class="logo">CSFFilmReview</div>
+</header>
+
+<div class="container">
+    <div class="genre-title">
+        <h1 style="font-size: 90px;">ADVENTURE</h1>
+    </div>
+
+    <div class="review-list" id="reviewList">
+        <div class="review">
+            <a href="/Film/Age of Ultron/Ageofultron_reviews.php" class="review-link">
+                <div class="review-header">
+                        <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/AgeofUltron.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Avengers: Age of Ultron</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="/Film/End Game/endgame_reviews.php" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/endgame.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Avengers: <br> End Game</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/dune.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Dune</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/dune2.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Dune: Part Two</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/eeaaw.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Everything Everywhere All at Once</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/Frozen.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Frozen</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Comedy.html" class="genre">Comedy</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/Frozen2.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Frozen II</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Comedy.html" class="genre">Comedy</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=5" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/indianajones_lastcrusade.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Indiana Jones and the Last Crusade </div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=5" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/indianajones_templeofdoom.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Indiana Jones and the Temple of Doom </div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=5" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/indianajonesandthedialofdestiny.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Indiana Jones and the Dial of Destiny</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=4" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/jurassicpark3.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Jurrasic Park III</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Fifth review -->
+        <div class="review">
+            <a href="post.html?id=5" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/jurassicworld.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Jurassic World</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Sixth review -->
+        <div class="review">
+            <a href="post.html?id=6" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/jurassicworld2.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Jurassic World: Fallen Kingdom</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=4" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/madmax.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Mad Max: <br>Fury Road</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=6" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/pokemondp.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Pokémon: <br> Detective Pikachu</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Mystery.html" class="genre">Mystery</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=2" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/sonic.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Sonic The Hedgehog</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Comedy.html" class="genre">Comedy</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/sonic2.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Sonic The Hedgehog 2</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Comedy.html" class="genre">Comedy</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=8" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/thelostworld.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">The Lost World: Jurassic Park</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="post.html?id=3" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/themarvels.webp" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">The <br> Marvels</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>   
+
+        <div class="review">
+            <a href="post.html?id=3" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/thewildrobot.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">The Wild Robot</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Adventure.html" class="genre">Adventure</a>
+                                    <a href="/Genre/Sci-fi.html" class="genre">Sci-Fi</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>   
+
+    </div>
+</div>
+
+<script src = "search.js"></script>
+</body>
+</html>
