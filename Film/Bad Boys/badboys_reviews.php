@@ -160,7 +160,7 @@ try {
                 </div>
             <?php endforeach; ?>
         </div>
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
         
         <!-- Upload Review Form -->
         <div id="overlay" style="display: none;"></div>
@@ -199,6 +199,15 @@ try {
             </section>
             </div>
         </div>
+    
+    <footer>
+      <div class="footer-links">
+        <a href="../footer/privacy policy.html">Privacy Policy</a>
+        <a href="../footer/ToS.html">Terms of Service</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/copyright.html">Copyright</a>
+      </div>
+      <p>&copy; 2024 CSFFilmReview. All rights reserved.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -307,6 +316,25 @@ try {
                 });
             }
         }
+
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+            let header = document.querySelector("header");
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.classList.add("sticky");
+            } else {
+                // Scrolling up
+                if (scrollTop <= 0) {
+                    header.classList.remove("sticky");
+                }
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
     </script>
 </body>
 </html>

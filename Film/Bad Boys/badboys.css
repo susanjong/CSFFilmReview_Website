@@ -5,18 +5,19 @@
 
 header {
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.35);
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(90deg, #000000, #003366, #000000); /* Gradient from dark to lighter gray */
     color: white;
     padding: 38px;
     display: flex;
-    align-items: center;
+    align-items: center;  
     font-family: Arial, sans-serif;
     font-size: 24px;
     font-weight: bold;
-    z-index: 1000;
+    z-index: 100000;
+    transition: background 0.6s ease, opacity 0.6s ease;
 }
 
 /* Align the navigation menu (if any) to the right */
@@ -51,6 +52,45 @@ header .search-bar::placeholder {
     justify-content: center; /* Pusatkan konten secara horizontal */
     align-items: center; /* Pusatkan konten secara vertikal */
     width: 100%;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #000000, #003366, #000000);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+}
+
+header.sticky {
+    background-color: rgba(0, 0, 0, 1);
+    opacity: 1;
+}
+
+header.sticky::before {
+    opacity: 1;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header.sticky::before {
+    animation: gradientAnimation 0.1s ease-in-out;
+    background-size: 200% 200%;
 }
 
 .logo {
@@ -261,15 +301,15 @@ body {
 .main-content {
     display: flex;
     width: 70%;
-    margin-top: 150px;
+    margin-top: 180px;
     align-items: center;
     justify-content: center;
     gap: 70px;
 }
 .poster {
-    width: 250px;
-    height: 357px;
-    background-image: url('/Photos/bad\ boys.webp');
+    width: 275px;
+    height: 392px;
+    background-image: url('/Photos/badbiys.jpg');
     margin-top: 20px;
     display: flex;
     background-size: cover;
@@ -281,14 +321,18 @@ body {
     flex-direction: column;
     max-width: 600px;
     text-align: justify;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
 .details h1 {
-    font-family: 'Oswald';
+    font-family: "Oswald";
     font-weight: 700;
     font-size: 48px;
     margin: 0;
+    margin-bottom: 5px;
+    color: white;
 }
+
 .details .year {
     font-family: "M PLUS 1p", sans-serif;
     font-weight: 700;
@@ -309,17 +353,18 @@ body {
 
 .bintang_review {
     font-size: 38px;
-    background: linear-gradient(to right, #FFD700, #c3a602);
+    font-weight:bold;
+    background: linear-gradient(to right, #FFD700, #ffd900);
     -webkit-background-clip: text; 
     background-clip: none ;
     color: transparent;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     margin-right: 8px; 
 }
 
 .starreview {
     font-size: 24px;
-    font-weight: 450;
+    font-weight: 600;
     color: #ffffff; 
     padding-top: 3px;
 }
@@ -572,6 +617,34 @@ textarea {
 
 i{
     font-size: 20px;
+}
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-links a:hover,
+.footer-socials .soc-icon:hover {
+    color: #ff6347;
 }
 
 @media screen and (max-width: 1366px) {
