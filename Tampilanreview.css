@@ -135,7 +135,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    height: 60vh;
+    height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -312,3 +312,27 @@ hr {
     word-spacing: 5px;
 }
 
+/* untuk buat footer dibawah page*/
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    width: 100%;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-socials .soc-icon:hover {
+    color: #ff6347;
+}
