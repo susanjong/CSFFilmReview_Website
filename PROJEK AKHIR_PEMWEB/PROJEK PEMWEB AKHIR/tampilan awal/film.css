@@ -107,6 +107,8 @@ header a:hover{
     text-shadow: 0 5px 10px #0004;
 }
 
+
+
 .slider .list .item .content .title,
 .slider .list .item .content .type{
     font-size: 4em;
@@ -249,18 +251,8 @@ header a:hover{
 }
 
 
-/* Animation for next button click */
-.slider.next .list .item:nth-child(1) img{
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
 
-@keyframes showImage{
+/* @keyframes showImage{
     to{
         bottom: 0;
         left: 0;
@@ -268,12 +260,25 @@ header a:hover{
         height: 100%;
         border-radius: 0;
     }
+} */
+
+/* Animation for next button click */
+.slider.next .list .item:nth-child(2) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
 }
+
 
 .slider.next .thumbnail .item:nth-last-child(1){
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
+
 .slider.prev .list .item img{
     z-index: 100;
 }
@@ -284,7 +289,6 @@ header a:hover{
         opacity: 0;
     }
 }
-
 
 .slider.next .thumbnail{
     animation: effectNext .5s linear 1 forwards;
@@ -308,21 +312,29 @@ header a:hover{
     bottom: 0;
     left: 0;
 }
-@keyframes outFrame{
+
+/* @keyframes outFrame{
     to{
         width: 150px;
         height: 220px;
         bottom: 50px;
         left: 50%;
         border-radius: 20px;
+    } */
+/* } */
+
+@keyframes unshowThumbnail{
+    to{
+        width: 0;
+        opacity: 0;
     }
 }
 
 .slider.prev .thumbnail .item:nth-child(1){
     overflow: hidden;
-    opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
 .slider.next .nextPrevArrows button,
 .slider.prev .nextPrevArrows button{
     pointer-events: none;
