@@ -1,85 +1,82 @@
-/* General styles */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000; /* Light background */
-    color: #ffffff; /* Text color */
+    background-color: #000000; 
+    color: #ffffff; 
     margin: 0;
     padding: 0;
 }
 
-/* Container for the update password form */
+/* Container untuk update form password */
 .container {
-    max-width: 400px; /* Set max width for the form */
-    margin: 50px auto; /* Center the container */
-    padding: 20px; /* Add padding */
-    background-color: #083493; /* White background for form */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 400px; /
+    margin: 50px auto;
+    padding: 20px; 
+    background-color: #083493; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Headings */
 h2 {
-    text-align: center; /* Center the title */
-    margin-bottom: 20px; /* Space below the title */
-    font-size: 24px; /* Font size */
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 24px; 
 }
 
 /* Form elements */
 form {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
+    display: flex; 
+    flex-direction: column; 
 }
 
 div {
-    margin-bottom: 15px; /* Space between form fields */
+    margin-bottom: 15px; 
 }
 
-/* Labels */
 label {
-    font-weight: bold; /* Bold labels */
-    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; 
+    margin-bottom: 5px; 
 }
 
 /* Input fields */
 input[type="email"],
 input[type="password"] {
-    padding: 10px; /* Padding inside inputs */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    padding: 10px; /* Padding dalam inputan */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
 }
 
 /* Input fields focus effect */
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #007BFF; /* Border color on focus */
-    outline: none; /* Remove default outline */
+    border-color: #007BFF; 
+    outline: none; 
 }
 
-/* Button styles */
+/* untuk buat desain buttonnya */
 button {
-    padding: 10px; /* Padding for the button */
-    background-color: #007BFF; /* Button background color */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s; /* Smooth background color change */
+    padding: 10px; 
+    background-color: #007BFF; /
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; /* untuk berubah warna background */
 }
 
-/* Button hover effect */
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
 
 /* Responsive design */
 @media (max-width: 500px) {
     .container {
-        padding: 15px; /* Adjust padding for smaller screens */
+        padding: 15px; 
     }
 
     h2 {
-        font-size: 20px; /* Adjust heading size for smaller screens */
+        font-size: 20px; 
     }
 }
