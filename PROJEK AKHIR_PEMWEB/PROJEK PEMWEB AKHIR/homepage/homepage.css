@@ -11,10 +11,10 @@
 
 body {
     background-color: #f0f0f0; 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; */
 }
 
 /* Background hanya untuk halaman pertama */
@@ -154,12 +154,12 @@ h4 {
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 100px;
     font-family: "Oswald", sans-serif;
     background: linear-gradient(45deg, #ffffff, #7e8083);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    text-fill-color: transparent
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -268,16 +268,10 @@ footer {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 20px;
     width: 100%;
     margin: 0;
     position: relative;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .footer-links a {
@@ -290,7 +284,6 @@ footer {
 .footer-socials .soc-icon:hover {
     color: #ff6347;
 }
-
 
 
 /* untuk ngatur ukuran di media mobile*/
@@ -310,7 +303,7 @@ footer {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 400px) {
     h1 {
         font-size: 40px;
     }
@@ -318,8 +311,10 @@ footer {
         font-size: 21px;
     }
     .content {
+        height: fit-content;
         padding: 30px;
         gap: 50px;
+
     }
     .card {
         width: 200px;
@@ -327,7 +322,7 @@ footer {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
     h1 {
         font-size: 30px;
     }
@@ -350,7 +345,7 @@ footer {
     }
 }
 
-@media (min-height: 300px) {
+/* @media (min-height: 300px) {
     * {
         margin: 0;
         padding: 0;
@@ -603,4 +598,4 @@ footer {
         margin: 5px 0;
         color: #858282;
     }
-}
+} */
