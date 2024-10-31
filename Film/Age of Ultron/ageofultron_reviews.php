@@ -119,7 +119,7 @@ try {
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Action.html" role="button">Action</a>
-                <a class="btn btn-primary" href="#" role="button">Adventure</a>
+                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
                 <a class="btn btn-primary" href="/Genre/Drama.html" role="button">Drama</a>
                 <a class="btn btn-primary" href="#" role="button">Fantasy</a>
             </div>
