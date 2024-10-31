@@ -403,3 +403,27 @@ i{
         font-size: 25px;
     }
 }
+
+/* untuk buat footer dibawah page*/
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-socials .soc-icon:hover {
+    color: #ff6347;
+}
+
+
