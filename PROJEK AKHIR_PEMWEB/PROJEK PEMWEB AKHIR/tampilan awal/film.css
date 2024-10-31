@@ -6,9 +6,33 @@ body{
     margin: 0;
     background-color: #000;
     color: #eee;
-    font-family: Poppins;
+    font-family: "Kanit";
     font-size: 12px;
 }
+
+
+.item .content .title{
+    line-height: 70px;
+    margin-left: 170px;
+    margin-bottom: 15px;
+}
+
+.item .content .description{
+    margin-left: 170px;
+    line-height: 30px;
+}
+
+.item .content .type{
+    margin-bottom: 30px;
+    margin-left: 170px;
+    line-height: 30px;
+}
+
+.item .content .button{
+    margin-left: 170px;
+    margin-top: 20px;
+}
+
 
 a{
     text-decoration: none;
@@ -17,9 +41,10 @@ a{
 header{
     width: 1140px;
     max-width: 80%;
-    margin: auto;
+    margin-left: 450px;
     height: 50px;
     display: flex;
+
     align-items: center;
     position: relative;
     z-index: 100;
@@ -28,20 +53,20 @@ header{
 
 header a{
     color: #eee;
-    margin-right: 5px;
+    margin-right: 10px;
     padding: 5px 10px;
     transition: 0.2s;
 }
 
 /*ini untuk bagian background di home*/
 a.active{
-    background: #0066cc;
+    background: #003366;
     border-radius: 2px;
 }
 
 /*navbar untuk dijadin hover*/
 header a:hover{
-    background: #39a2f3;
+    background: #0066cc;
     border-radius: 2px;
 }
 
@@ -96,7 +121,7 @@ header a:hover{
 }
 .slider .list .item .content{
     position: absolute;
-    top: 20%;
+    top: 17%;
     width: 1140px;
     max-width: 80%;
     left: 50%;
@@ -111,17 +136,16 @@ header a:hover{
 
 .slider .list .item .content .title,
 .slider .list .item .content .type{
-    font-size: 4em;
+    font-size: 5em;
     font-weight: bold;
-    line-height: 1.3em;
     font-family: 'Oswald', sans-serif;
 }
 
 /*ini untuk tulisan dibuat warna*/
 .slider .list .item .content .type {
-    color: #d9ce05;
+    color: #ffde59;
     font-size: 25px; 
-    font-family: 'Kanit', sans-serif;
+    font-family: "Kanit", sans-serif;
 }
 
 .slider .list .item .button{
@@ -129,12 +153,14 @@ header a:hover{
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
     gap: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
+
 .slider .list .item .button button{
     border: none;
-    background-color: #eee;
-    font-family: Poppins;
+    background-color: #003366;
+    color: #ffffff;
+    font-family: "Kanit", sans-serif;
     font-weight: 500;
     cursor: pointer;
     transition: 0.4s;
@@ -143,7 +169,7 @@ header a:hover{
 
 
 .slider .list .item .button button:hover{
-    letter-spacing: 3px;
+    color: #ffde59;
 }
 .slider .list .item .button button:nth-child(2){
     background-color: transparent;
@@ -152,16 +178,18 @@ header a:hover{
 }
 
 .description   {
+    display: block;
+    width: 400px;
+    text-align: justify;
     font-size: 20px;
-    word-break: break-all; /* Memotong kata yang terlalu panjang */
     font-family: 'Kanit', sans-serif;
 }
 
 /* Thumbnail Section  */
 .thumbnail{
     position: absolute;
-    bottom: 50px;
-    left: 50%;
+    bottom: 70px;
+    left: 53%;
     width: max-content;
     z-index: 100;
     display: flex;
@@ -185,10 +213,10 @@ header a:hover{
 
 
 /* nextPrevArrows Section  */
-.nextPrevArrows{
+.PrevArrows{
     position: absolute;
-    top: 80%;
-    right: 52%;
+    top: 75%;
+    right: 33%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
@@ -196,21 +224,51 @@ header a:hover{
     gap: 10px;
     align-items: center;
 }
-.nextPrevArrows button{
+
+.PrevArrows button{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #0066cc;
+    background-color: #ffffff;
     border: none;
-    color: #fff;
+    color: #003366;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
     cursor: pointer;
 }
-.nextPrevArrows button:hover{
-    background-color: #fff;
-    color: #000;
+.PrevArrows button:hover{
+    background-color: #003366;
+    color: #ffffff;
+}
+
+.nextArrows{
+    position: absolute;
+    top: 75%;
+    right:2px;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nextArrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    color: #003366;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+.nextArrows button:hover{
+    background-color: #003366;
+    color: #ffffff;
 }
 
 /* Animation Part */
