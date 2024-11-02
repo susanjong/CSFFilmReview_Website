@@ -35,7 +35,7 @@ if ($user) {
             <p><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
             <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
             <div class="button-container">
-                <a href="/tampilanawal.html" class="go-home-btn">Go to Homepage</a>
+                <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html" class="go-home-btn">Go to Homepage</a>
                 <a href="sign-out.php" class="go-home-btn">Sign Out</a>
             </div>
         </div>

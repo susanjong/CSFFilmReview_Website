@@ -65,7 +65,7 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Bad Boys/badboys.css">
+    <link rel="stylesheet" href="/Film//Bad Boys/badboys.css">
 </head>
 
 <body>
@@ -87,26 +87,18 @@ try {
                     <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/ContactUs.html"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
                 </div>
             </label>
-        </div>
-    
-
-        <div class="box">
-            <input type="text" placeholder="Search Movie...">
-            <i class="fas fa-search" style = "color: #45525f;"></i>
-        </div>                
+        </div>           
     </section>
 
     <div class="logo">CSFFilmReview</div>
 </header>
 
     <div class="main-content">
-        <div class="poster">
-
-        </div>
+        <div class="poster"></div>
 
         <div class="details">
-            <h1>BAD BOYS: <br>RIDE OR DIE</h1>
-            <div class="year">2024, Adil El Arbi, Bilaal Fallah</div>
+            <h1>BAD BOYS: RIDE OR DIE</h1>
+            <div class="year">2024, Bilall Fallah & Adil El Rabi</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
@@ -117,34 +109,36 @@ try {
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Action.html" role="button">Action</a>
-                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
                 <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
                 <a class="btn btn-primary" href="/Genre/Crime.html" role="button">Crime</a>
+                <a class="btn btn-primary" href="/Genre/Thriller.html" role="button">Thriller</a>
             </div>
         </div>
     </div>
 
     <div class="reviews">
-        <h2 class="judul-review">RECENT REVIEWS</h2><button onclick="toggleForm()" class="addreview">+ Add Reviews</button>
-        <hr>
-        <div class="review-item">
-            <h3 class="reviewer">Asep Capek</h3><p class="date">01 Jan 2024</p>
-            <p class="review">This movie is a DOPE! I've watched it 100x times a day.</p>
-            <div class="rating">Rating: ★ ★ ★ ★ ★ 5.0</div>
+        <div class="review-header">
+            <h2 class="judul-review">RECENT REVIEWS</h2>
+            <button onclick="toggleForm()" class="addreview">+ Add Reviews</button> 
         </div>
+        <hr>
 
         <div>
             <?php foreach ($results as $row): ?>
                 <div class="review-item">
-                    <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
-                    <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    <div class="review-top">
+                        <div class="review-top-left">
+                            <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
+                            <div class="rating">
+                                <?php echo str_repeat('★ ', $row['bintang']);?> 
+                                <!-- <p class = "number"><?php echo ' ' . number_format($row['bintang'], 1);?></p> -->
+                            </div>
+                        </div>
+                        <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    </div>
+                    
                     <p class="review"><?php echo htmlspecialchars($row['komentar']); ?></p>
-                    <div class="rating">
-                        Rating: <?php 
-                            echo str_repeat('★ ', $row['bintang']) . str_repeat('☆ ', 5 - $row['bintang']); 
-                            echo ' ' . number_format($row['bintang'], 1); 
-                        ?>
-                        
+                    <div class="delete-button">                    
                         <?php if (isset($_SESSION['user_id']) && (int)$row['user_id'] === (int)$_SESSION['user_id']): ?>
                             <svg width="24" height="24" class="editreview_button">
                                 <circle cx="12" cy="6" r="1.5"/>
@@ -300,7 +294,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_badboys.php', {
+                fetch('delete_ageofultron.php', {
                     method: 'POST',
                     body: params
                 })
@@ -334,7 +328,6 @@ try {
             }
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
-
     </script>
 </body>
 </html>

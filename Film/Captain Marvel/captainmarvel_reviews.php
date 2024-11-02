@@ -87,64 +87,58 @@ try {
                     <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/ContactUs.html"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
                 </div>
             </label>
-        </div>
-    
-
-        <div class="box">
-            <input type="text" placeholder="Search Movie...">
-            <i class="fas fa-search" style = "color: #45525f;"></i>
-        </div>                
+        </div>           
     </section>
 
     <div class="logo">CSFFilmReview</div>
 </header>
 
     <div class="main-content">
-        <div class="poster">
-
-        </div>
+        <div class="poster"></div>
 
         <div class="details">
             <h1>CAPTAIN MARVEL</h1>
-            <div class="year">2019, Anna Boden, Ryan Fleck</div>
+            <div class="year">2019, Ryan Fleck & Anna Boden</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis">
-            The story follows Carol Danvers as she becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.
+                The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Action.html" role="button">Action</a>
                 <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
-                <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
-                <a class="btn btn-primary" href="#" role="button">Superhero</a>
+                <a class="btn btn-primary" href="/Genre/Sci-fi.html" role="button">Sci-Fi</a>
+                <a class="btn btn-primary" href="/Genre/Fantasy.html" role="button">Fantasy</a>
             </div>
         </div>
     </div>
 
     <div class="reviews">
-        <h2 class="judul-review">RECENT REVIEWS</h2><button onclick="toggleForm()" class="addreview">+ Add Reviews</button>
-        <hr>
-        <div class="review-item">
-            <h3 class="reviewer">Asep Capek</h3><p class="date">01 Jan 2024</p>
-            <p class="review">This movie is a DOPE! I've watched it 100x times a day.</p>
-            <div class="rating">Rating: ★ ★ ★ ★ ★ 5.0</div>
+        <div class="review-header">
+            <h2 class="judul-review">RECENT REVIEWS</h2>
+            <button onclick="toggleForm()" class="addreview">+ Add Reviews</button> 
         </div>
+        <hr>
 
         <div>
             <?php foreach ($results as $row): ?>
                 <div class="review-item">
-                    <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
-                    <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    <div class="review-top">
+                        <div class="review-top-left">
+                            <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
+                            <div class="rating">
+                                <?php echo str_repeat('★ ', $row['bintang']);?> 
+                                <!-- <p class = "number"><?php echo ' ' . number_format($row['bintang'], 1);?></p> -->
+                            </div>
+                        </div>
+                        <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    </div>
+                    
                     <p class="review"><?php echo htmlspecialchars($row['komentar']); ?></p>
-                    <div class="rating">
-                        Rating: <?php 
-                            echo str_repeat('★ ', $row['bintang']) . str_repeat('☆ ', 5 - $row['bintang']); 
-                            echo ' ' . number_format($row['bintang'], 1); 
-                        ?>
-                        
+                    <div class="delete-button">                    
                         <?php if (isset($_SESSION['user_id']) && (int)$row['user_id'] === (int)$_SESSION['user_id']): ?>
                             <svg width="24" height="24" class="editreview_button">
                                 <circle cx="12" cy="6" r="1.5"/>
@@ -167,7 +161,7 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/captainmarvel.webp" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/captainmarvel.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
@@ -199,7 +193,7 @@ try {
             </section>
             </div>
         </div>
-
+    
     <footer>
       <div class="footer-links">
         <a href="../footer/privacy policy.html">Privacy Policy</a>
@@ -300,7 +294,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_captainmarvel.php', {
+                fetch('delete_ageofultron.php', {
                     method: 'POST',
                     body: params
                 })

@@ -87,22 +87,14 @@ try {
                     <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/ContactUs.html"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
                 </div>
             </label>
-        </div>
-    
-
-        <div class="box">
-            <input type="text" placeholder="Search Movie...">
-            <i class="fas fa-search" style = "color: #45525f;"></i>
-        </div>                
+        </div>           
     </section>
 
     <div class="logo">CSFFilmReview</div>
 </header>
 
     <div class="main-content">
-        <div class="poster">
-
-        </div>
+        <div class="poster"></div>
 
         <div class="details">
             <h1>ANNABELLE</h1>
@@ -124,21 +116,28 @@ try {
     </div>
 
     <div class="reviews">
-        <h2 class="judul-review">RECENT REVIEWS</h2><button onclick="toggleForm()" class="addreview">+ Add Reviews</button>
+        <div class="review-header">
+            <h2 class="judul-review">RECENT REVIEWS</h2>
+            <button onclick="toggleForm()" class="addreview">+ Add Reviews</button> 
+        </div>
         <hr>
 
         <div>
             <?php foreach ($results as $row): ?>
                 <div class="review-item">
-                    <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
-                    <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    <div class="review-top">
+                        <div class="review-top-left">
+                            <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
+                            <div class="rating">
+                                <?php echo str_repeat('★ ', $row['bintang']);?> 
+                                <!-- <p class = "number"><?php echo ' ' . number_format($row['bintang'], 1);?></p> -->
+                            </div>
+                        </div>
+                        <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    </div>
+                    
                     <p class="review"><?php echo htmlspecialchars($row['komentar']); ?></p>
-                    <div class="rating">
-                        Rating: <?php 
-                            echo str_repeat('★ ', $row['bintang']) . str_repeat('☆ ', 5 - $row['bintang']); 
-                            echo ' ' . number_format($row['bintang'], 1); 
-                        ?>
-                        
+                    <div class="delete-button">                    
                         <?php if (isset($_SESSION['user_id']) && (int)$row['user_id'] === (int)$_SESSION['user_id']): ?>
                             <svg width="24" height="24" class="editreview_button">
                                 <circle cx="12" cy="6" r="1.5"/>
@@ -161,13 +160,13 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/AgeofUltron.webp" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/annabelle.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">AVENGERS: AGE OF ULTRON
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2015</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">ANNABELLE
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2014</span>
                 </h1>
                 <form action="#" method="post">
 
