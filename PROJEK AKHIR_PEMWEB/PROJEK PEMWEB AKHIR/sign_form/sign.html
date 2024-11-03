@@ -1,79 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title> Sign In & Sign Up</title>
     <link rel="stylesheet" href="sign.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <title>Sign In and Sign Up Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 
-<!--Masuk kedalam isi konten dengan menggunakn framweork tailwind css -->
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-blue-600">
-    <div class="w-full max-w-md flip-container custom-padding">
-        <div class="flip-box">
-            <div class="front">
-                <div id="sign-in-menu" class="bg-gray-800 rounded-xl shadow-lg p-8">
-                    <h2 class="text-3xl font-bold text-center text-white mb-6">Sign In</h2>
-                    <h4 class="typewriter text-sm font-medium text-center text-gray-300 mb-4">Welcome, please sign in so you can enter your account</h4>
-                    <form id="sign-in-form" action="/Handling/sign-in.php" method="POST" class="space-y-6">
-                        
-                        <!--untuk buat isi email di sign in -->
-                        <div class="input-container">
-                            <label for="sign-in-email"
-                                class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                                <i class="fa-solid fa-envelope"></i> <!-- Ikon untuk email -->
-                            <input type="email" id="sign-in-email" name="email" placeholder="Enter your email" required
-                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-box">
+                <div class="front">
+                    <h2>Sign In</h2>
+                  <h4 class="typewriter"> Welcome, please sign in so you can enter your account </h4>  
+                    <form id="login-form">
+                        <div class="input-field">
+                            <label for="login-email">Email</label>
+                            <i class="fa-solid fa-envelope icon"></i>
+                            <input type="email" id="login-email" placeholder="Enter your email">
                         </div>
-                        <div class="input-container">
-                            <label for="sign-in-password"
-                                class="block text-sm font-medium text-gray-300 mb-2">Password</label>
-                                <i class="fa-solid fa-lock"></i> <!--ikon untuk password -->
-                            <input type="password" id="sign-in-password" name="password"
-                                placeholder="Enter your password" required
-                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="input-field">
+                            <label for="login-password">Password</label>
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="login-password" placeholder="Enter your password">
                         </div>
-
-                        <!--Untuk membuat menu remember the password dan lupa password menu -->
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <input id="remember-me" type="checkbox"
-                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                                <label for="remember-me" class="ml-2 block text-sm text-gray-300">
-                                    Remember Me
-                                </label>
-                            </div>
-                            <div>
-                                <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/sign_form/update_password.html" class="text-sm text-blue-400 hover:underline">Forgot Password?</a>
-                            </div>
+                        <div class="options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Remember Me</label>
+                                </div>
+                            <a href="#" id="forgot-password" class="forgot-password">Forgot Password?</a>
+                      
                         </div>
-
-
-                        <!--tombol untuk submit dan apabila tidak punya akun-->
-                        <button type="submit"
-                            class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Sign
-                            In</button>
+                        <button type="submit">Login</button>
+                        <p class="switch">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
                     </form>
-                    <p class="text-center text-gray-400 mt-4">Don't have an account? <a href="#" id="show-sign-up"
-                            class="text-blue-400 hover:underline">Sign Up</a></p>
 
-                    <!-- atau dapat dilanjutkan sign in dengan menu gmail-->
-                    <div class="mt-6 flex items-center justify-center">
-                        <hr class="w-1/4 border-gray-300 opacity-50">
-                        <p class="text-gray-400 px-2">Or continue with</p>
-                        <hr class="w-1/4 border-gray-300 opacity-50">
+                    <!-- Divider with text -->
+                    <div class="divider-container">
+                        <div class="divider-line"></div>
+                        <p class="divider-text">Or continue with</p>
+                        <div class="divider-line"></div>
                     </div>
 
-                    <!-- Tombol sosial media yang dapat dihubungkan -->
-                    <div class="mt-4 flex justify-center space-x-4">
-                        <a href="#" class="flex items-center justify-center w-64 max-w-xs py-3 px-4 text-white border border-gray-300 border-opacity-50 rounded-md hover:bg-gray-600 transition duration-300">
-                            <!-- Gmail Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
-                                viewBox="0 0 48 48">
+                    <!--untuk memasukkan gmail button-->
+                    <div class="social-container">
+                        <a href="#" class="social-button">
+                            <!-- Gmail Icon dengan menggunakan svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                                 <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z">
                                 </path>
                                 <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z">
@@ -87,76 +63,48 @@
                                     d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C38.868,8.301,39.772,8,40.702,8h0 C43.076,8,45,9.924,45,12.298z">
                                 </path>
                             </svg>
-                            <span class="ml-3">Gmail</span>
+                            <span>Gmail</span>
                         </a>
-                        
                     </div>
                 </div>
-            </div>
 
-            <!--untuk menu sign up-->
-            <div class="back">
-                <div id="sign-up-menu" class="bg-gray-800 rounded-xl shadow-lg p-8">
-                    <h2 class="text-3xl font-bold text-center text-white mb-6">Sign Up</h2>
-                
-                    <form id="sign-up-form" action="/Handling/sign-up.php" method="POST" class="space-y-6">
-        
-                            <!--untuk membuat icon makanya dibuat class input-container-->
-                            <div class="input-container">
-                            <label for="sign-up-username" class="block text-sm font-medium text-gray-300 mb-2">Username</label>
-                            <i class="fas fa-user"></i> <!-- Ikon untuk username -->
-                            <input type="text" id="sign-up-username" name="username" placeholder="Enter a your username"
-                                required
-                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <!--Menu untuk melakukan Sign Up-->
+                <div class="back">
+                    <h2>Sign Up</h2>
+                    <form id="signup-form">
+                        <div class="input-field">
+                            <label for="signup-username">Username</label>
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="signup-username" placeholder="Enter your username">
                         </div>
-                      
-                            <div class="input-container">
-                            <label for="sign-up-email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                            <i class="fa-solid fa-envelope"></i> <!-- Ikon untuk email -->
-                            <input type="email" id="sign-up-email" name="email" placeholder="Enter your email" required
-                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="input-field">
+                            <label for="signup-email">Email</label>
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="signup-email" placeholder="Enter your email">
                         </div>
-                        <div class="input-container">
-                            <label for="sign-up-password"
-                                class="block text-sm font-medium text-gray-300 mb-2">Password</label>
-                                <i class="fa-solid fa-lock"></i> <!--ikon untuk password -->
-                            <input type="password" id="sign-up-password" name="password" placeholder="Create a password"
-                                required
-                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="input-field">
+                            <label for="signup-password">Password</label>
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-password" placeholder="Enter your password">
                         </div>
-                        <div class="input-container">
-                            <label for="sign-up-confirm-password"
-                                class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
-                                <i class="fa-solid fa-lock"></i> <!--ikon untuk password -->
-                            <input type="password" id="sign-up-confirm-password" name="confirm-password"
-                                placeholder="Confirm your password" required
-                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="input-field">
+                            <label for="signup-password">Confirm Password</label>
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-password" placeholder="Confirm your password">
                         </div>
-
-                         <!--Untuk membuat menu remember the password-->
-                         <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <input id="remember-me" type="checkbox"
-                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded ">
-                                <label for="remember-me" class="ml-2 block text-sm text-gray-300">
-                                    Remember Me
-                                </label>
-                            </div>  
-                        </div>
-
-                        <button type="submit"
-                            class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300  mt-5">Sign
-                            Up</button>
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Remember Me</label>
+                                </div>
+                        <button type="submit">Sign Up</button>
+                        <p class="switch">Already have an account? <a href="#" id="show-login">Sign In</a></p>
                     </form>
-                    <p class="text-center text-gray-400 mt-4">Already have an account? <a href="#" id="show-sign-in"
-                            class="text-blue-400 hover:underline">Sign In</a></p>
-                        
                 </div>
             </div>
         </div>
     </div>
-    <script src="sign.js"></script>
 
+    <script src="sign.js"></script>
 </body>
 
 </html>

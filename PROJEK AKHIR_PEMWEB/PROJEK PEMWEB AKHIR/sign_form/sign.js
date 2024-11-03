@@ -1,7 +1,6 @@
 window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search); // Get the URL parameters
     const error = urlParams.get('error'); // Get the 'error' parameter value from the URL
-    const success = urlParams.get('success');
 
 // Show error messages if present
 if (error) {
@@ -26,36 +25,17 @@ if (error) {
         const newURL = window.location.href.split('?')[0]; // Get URL without parameters
         window.history.replaceState(null, null, newURL);
     }
-    if (success) {
-        let successMessage = '';
-        
-        // Check for specific success messages
-        if (success === 'password_updated') {
-            successMessage = 'Password updated successfully!';
-        } else if (success === 'registration_complete') {
-            successMessage = 'Registration successful! You can now log in.';
-        }
-
-        if (successMessage) {
-            alert(successMessage);
-
-            const newURL = window.location.href.split('?')[0];
-            window.history.replaceState(null, null, newURL);
-        }
-    }
 }
 }
 
-const flipContainer = document.querySelector('.flip-container');
-const showSignUp = document.getElementById('show-sign-up');
-const showSignIn = document.getElementById('show-sign-in');
-
-showSignUp.addEventListener('click', (e) => {
-    e.preventDefault();
-    flipContainer.classList.add('flipped');
+document.getElementById('show-signup').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('.form-container').classList.add('flipped');
 });
 
-showSignIn.addEventListener('click', (e) => {
-    e.preventDefault();
-    flipContainer.classList.remove('flipped');
+document.getElementById('show-login').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('.form-container').classList.remove('flipped');
 });
+
+
