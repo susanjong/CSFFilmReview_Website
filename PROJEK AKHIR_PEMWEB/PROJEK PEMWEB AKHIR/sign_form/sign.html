@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Sign In & Sign Up</title>
-    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/sign_form/sign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 
@@ -71,26 +71,26 @@
                 <!--Menu untuk melakukan Sign Up-->
                 <div class="back">
                     <h2>Sign Up</h2>
-                    <form id="signup-form">
+                    <form id="signup-form" action="/Handling/sign-up.php" method="post">
                         <div class="input-field">
                             <label for="signup-username">Username</label>
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" id="signup-username" placeholder="Enter your username">
+                            <input type="text" id="signup-username" name="username" placeholder="Enter your username" required>
                         </div>
                         <div class="input-field">
                             <label for="signup-email">Email</label>
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="email" id="signup-email" placeholder="Enter your email">
+                            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="input-field">
                             <label for="signup-password">Password</label>
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="signup-password" placeholder="Enter your password">
+                            <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
                         </div>
                         <div class="input-field">
                             <label for="signup-password">Confirm Password</label>
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="signup-password" placeholder="Confirm your password">
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
                         </div>
                             <div class="remember-me">
                                 <input type="checkbox" id="remember-me">

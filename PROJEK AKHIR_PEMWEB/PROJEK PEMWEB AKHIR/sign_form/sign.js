@@ -16,7 +16,9 @@ if (error) {
     }else if (error === 'invalid_email') {
         errorMessage = 'Please use a valid Gmail address.';
     }
-    
+    else if (error == 'password_mismatch') {
+        errorMessage = 'Password is not match';
+    }
 
     // Display the alert with the error message
     if (errorMessage) {
