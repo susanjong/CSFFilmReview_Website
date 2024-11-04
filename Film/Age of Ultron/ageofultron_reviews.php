@@ -70,27 +70,30 @@ try {
 
 <body>
 <header>
-    <section class="header-center">
-        <div id="sidebar" class="sidebar">
-            <label>
-                <input type="checkbox" class="checkbox" id="toggle">
-                <div class="toggle">
-                    <span class="top_line common"></span>
-                    <span class="middle_line common"></span>
-                    <span class="bottom_line common"></span>
-                </div>
-                <div class="slide">
-                    <p class="Close">Close</p>
-                    <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html"><i class="fas fa-home"></i>&nbsp Homepage</a>
-                    <a href="/Genre/Genre.html"><i class="fas fa-film"></i>&nbsp Genre</a>
-                    <a href="/Genre/MovieList.html"><i class="fas fa-list"></i>&nbsp Movie List</a>
-                    <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/ContactUs.html"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
-                </div>
-            </label>
-        </div>           
-    </section>
-
     <div class="logo">CSFFilmReview</div>
+    <section class="header-center">
+        <nav>
+            <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html" class="active">Home</a>
+            <div class="dropdown-genre">
+            <a href="#">Genre</a>
+                <div class="dropdown-content">
+                    <a href="/Genre/Action.html">Action</a>
+                    <a href="/Genre/Adventure.html">Adventure</a>
+                    <a href="/Genre/Comedy.html">Comedy</a>
+                    <a href="/Genre/Crime.html">Crime</a>
+                    <a href="/Genre/Drama.html">Drama</a>
+                    <a href="/Genre/Horror.html">Horror</a>
+                    <a href="/Genre/Mystery.html">Mystery</a>
+                    <a href="/Genre/Romance.html">Romance</a>
+                    <a href="/Genre/Sci-fi.html">Sci-fi</a>
+                    <a href="/Genre/Thriller.html">Thriller</a>
+                </div>
+            </div>
+            <a href="/Film/End Game/endgame_reviews.php">Reviews</a>
+            <a href="/Handling/profile.php">Profile</a>
+            <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/homepage/index.html">Contact Us</a>
+        </nav>
+    </section>
 </header>
 
     <div class="main-content">
@@ -207,17 +210,6 @@ try {
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            var mainContent = document.getElementById("main-content");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-                mainContent.style.marginLeft = "0";
-            } else {
-                sidebar.style.width = "250px";
-                mainContent.style.marginLeft = "250px";
-            }
-        }
 
         function toggleForm() {
             const overlay = document.getElementById('overlay');
