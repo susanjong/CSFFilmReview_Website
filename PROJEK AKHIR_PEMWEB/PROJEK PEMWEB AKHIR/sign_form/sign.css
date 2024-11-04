@@ -166,7 +166,7 @@
   button {
     width: 100%;
     padding: 14px; 
-    background-color: #1c2e88; 
+    background-color: #002244; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -176,7 +176,7 @@
   }
   
   button:hover {
-    background-color: #014284; 
+    background-color: #003366; 
   }
   
   .switch {
@@ -187,7 +187,7 @@
   }
   
   .switch a {
-    color: #6acbe3; 
+    color: #ffde59; 
     text-decoration: none;
   }
   
