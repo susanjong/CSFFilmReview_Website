@@ -1,80 +1,78 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set the overall page background color */
 body {
-    background-color: #042143; /* Blue background color */
-    color: white; /* Default text color for better contrast */
-    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Arrange children in a column */
-    justify-content: center; /* Center align the container vertically */
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(180deg, #000000 39.25%, #003366 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #ffffff;
 }
 
-/* Container for the Profile Page */
-.container {
+.profile-card {
     width: 100%;
-    max-width: 600px; /* Set a max width for better readability */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Add padding */
-    background-color: rgba(50, 91, 168, 0.85); /* Blue background with transparency */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    flex: 1; /* Allow the container to grow and fill the available space */
-    display: flex; /* Use flexbox to manage child elements */
-    flex-direction: column; /* Stack children vertically */
+    max-width: 500px;
+    background: linear-gradient(180deg, #000000 39.25%, #003366 100%);
+    border-radius: 8px;
+    box-shadow: 0 1px 20px rgba(69, 90, 100, 0.6);
+    overflow: hidden;
 }
 
-/* Heading styles */
-h1 {
-    font-size: 2rem; /* Font size for the heading */
-    margin-bottom: 20px; /* Space below heading */
-    text-align: center; /* Center align the heading */
-    color: #fff; /* White text color for contrast */
+.profile-header {
+    background: linear-gradient(to right, #000000 39.25%, #003366 100%);
+    padding: 20px;
+    color: #ffffff;
 }
 
-/* Paragraph styles */
-p {
-    font-size: 1.2rem; /* Font size for user info */
-    margin-bottom: 15px; /* Space below paragraphs */
-    color: #f1f1f1; /* Slightly lighter text color */
+.profile-content {
+    padding: 20px;
 }
 
-/* Strong text styles */
-strong {
-    color: #fff; /* White color for labels */
+.info-section {
+    margin-bottom: 20px;
 }
 
-/* Button Container */
-.button-container {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center align the button horizontally */
-    margin-top: 90px; /* Space above the button */
-    padding: 10px; /* Add padding around the button container */
+.section-title {
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-/* Link styles */
-.go-home-btn {
-    display: inline-block; /* Make the link block-level for better styling */
-    padding: 10px 15px; /* Padding around the link */
-    background-color: #0056b3; /* Primary color for the button */
-    color: white; /* Text color */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners for the button */
-    text-align: center; /* Center align text */
-    transition: background-color 0.3s; /* Smooth background color transition */
+.info-label {
+    font-weight: 600;
+    margin: 0;
 }
 
-.go-home-btn:hover {
-    background-color: #003d7a; /* Darker shade on hover */
+.info-value {
+    color: #e0e0e0;
+    margin: 0 0 15px 0;
 }
 
-/* Additional padding for bottom */
-.custom-padding {
-    padding-bottom: 35rem; /* Adjust as needed for layout */
+.button-section .btn {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: #ffffff; /* Set text color here to ensure it remains constant */
+}
+
+.homepage-btn {
+    background-color: #033f7b;
+    border: none;
+}
+
+.homepage-btn:hover {
+    background-color: #003366;
+    color: #ffffff; /* Ensure text color remains the same on hover */
+}
+
+.signout-btn {
+    background-color: #6a1b04;
+    border: none;
+}
+
+.signout-btn:hover {
+    background-color: #972705;
+    color: #ffffff; /* Ensure text color remains the same on hover */
 }
