@@ -196,6 +196,7 @@ try {
             </section>
             </div>
         </div>
+    </div>
     
     <footer>
       <div class="footer-links">

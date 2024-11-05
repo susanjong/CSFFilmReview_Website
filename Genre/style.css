@@ -21,6 +21,7 @@ body {
     min-height: 100vh;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .oswald-font {
   font-family: "Oswald", sans-serif;
@@ -437,11 +438,28 @@ footer {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-links a:hover,
 .footer-socials .soc-icon:hover {
-    color: #ff6347;
+    color: #ffde59;
 }
 
+footer a {
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1px;
+}
 
+footer p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 13px;
+}
+footer a:hover{
+    color:#ffde59;
+}
