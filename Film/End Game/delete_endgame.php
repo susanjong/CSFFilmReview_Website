@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Cek apakah ada baris yang terhapus
         if ($stmt->rowCount() > 0) {
-            echo "Review berhasil dihapus.";
+            echo "Review successfully deleted.";
         } else {
-            echo "Review tidak ditemukan atau sudah dihapus.";
+            echo "Review not found or has already been deleted.";
         }
     } else {
-        echo "ID review tidak valid.";
+        echo "ID review is not valid.";
     }
 }
 ?>

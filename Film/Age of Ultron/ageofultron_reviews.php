@@ -89,7 +89,7 @@ try {
                     <a href="/Genre/Thriller.html">Thriller</a>
                 </div>
             </div>
-            <a href="/Film/End Game/endgame_reviews.php">Reviews</a>
+            <a href="/Genre/MovieList.html">Movie List</a>
             <a href="/Handling/profile.php">Profile</a>
             <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/homepage/index.html">Contact Us</a>
         </nav>
@@ -150,7 +150,7 @@ try {
                             </svg>
                             
                             <div class="dropdown" style="display: none;">
-                                <button onclick="deleteReview(<?php echo $row['id']; ?>)">Delete</button>
+                                <button onclick="deleteReview(<?php echo $row['id']; ?>)">Delete Review</button>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -187,11 +187,11 @@ try {
                         </div>
                         <input type="hidden" id="bintang" name="bintang" required>
                         <input type="hidden" name="reviewId" value="<?= $review ? $review['id'] : '' ?>">
+                        <input type="submit" value="Submit" class="submitbutton">
                     </div>
                     <br><br>      
 
                     <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
-                    <input type="submit" value="Submit" class="submitbutton">
                 </form>
             </section>
             </div>
@@ -282,7 +282,7 @@ try {
         }
 
         function deleteReview(reviewId) {
-                if (confirm("Apakah Anda yakin ingin menghapus review ini?")) {
+                if (confirm("Are you sure you want to delete this review?")) {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
@@ -298,7 +298,7 @@ try {
                
                 .catch(error => {
                     console.error('Error:', error);
-                    alert("Terjadi kesalahan saat menghapus review.");
+                    alert("An error occurred while deleting the review.");
                 });
             }
         }
