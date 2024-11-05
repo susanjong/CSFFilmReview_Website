@@ -70,33 +70,30 @@ try {
 
 <body>
 <header>
-    <section class="header-center">
-        <div id="sidebar" class="sidebar">
-            <label>
-                <input type="checkbox" class="checkbox" id="toggle">
-                <div class="toggle">
-                    <span class="top_line common"></span>
-                    <span class="middle_line common"></span>
-                    <span class="bottom_line common"></span>
-                </div>
-                <div class="slide">
-                    <p class="Close">Close</p>
-                    <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html"><i class="fas fa-home"></i>&nbsp Homepage</a>
-                    <a href="/Genre/Genre.html"><i class="fas fa-film"></i>&nbsp Genre</a>
-                    <a href="/Genre/MovieList.html"><i class="fas fa-list"></i>&nbsp Movie List</a>
-                    <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/ContactUs.html"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
-                </div>
-            </label>
-        </div>
-    
-
-        <div class="box">
-            <input type="text" placeholder="Search Movie...">
-            <i class="fas fa-search" style = "color: #45525f;"></i>
-        </div>                
-    </section>
-
     <div class="logo">CSFFilmReview</div>
+    <section class="header-center">
+        <nav>
+            <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html" class="active">Home</a>
+            <div class="dropdown-genre">
+            <a href="#">Genre</a>
+                <div class="dropdown-content">
+                    <a href="/Genre/Action.html">Action</a>
+                    <a href="/Genre/Adventure.html">Adventure</a>
+                    <a href="/Genre/Comedy.html">Comedy</a>
+                    <a href="/Genre/Crime.html">Crime</a>
+                    <a href="/Genre/Drama.html">Drama</a>
+                    <a href="/Genre/Horror.html">Horror</a>
+                    <a href="/Genre/Mystery.html">Mystery</a>
+                    <a href="/Genre/Romance.html">Romance</a>
+                    <a href="/Genre/Sci-fi.html">Sci-fi</a>
+                    <a href="/Genre/Thriller.html">Thriller</a>
+                </div>
+            </div>
+            <a href="/Genre/MovieList.html">Movie List</a>
+            <a href="/Handling/profile.php">Profile</a>
+            <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/homepage/index.html">Contact Us</a>
+        </nav>
+    </section>
 </header>
 
     <div class="main-content">
@@ -153,7 +150,7 @@ try {
                             </svg>
                             
                             <div class="dropdown" style="display: none;">
-                                <button onclick="deleteReview(<?php echo $row['id']; ?>)">Delete</button>
+                                <button onclick="deleteReview(<?php echo $row['id']; ?>)">Delete Review</button>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -190,11 +187,11 @@ try {
                         </div>
                         <input type="hidden" id="bintang" name="bintang" required>
                         <input type="hidden" name="reviewId" value="<?= $review ? $review['id'] : '' ?>">
+                        <input type="submit" value="Submit" class="submitbutton">
                     </div>
                     <br><br>      
 
                     <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
-                    <input type="submit" value="Submit" class="submitbutton">
                 </form>
             </section>
             </div>
@@ -296,11 +293,11 @@ try {
         }
 
         function deleteReview(reviewId) {
-                if (confirm("Apakah Anda yakin ingin menghapus review ini?")) {
+                if (confirm("Are you sure you want to delete this review?")) {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_captainmarvel.php', {
+                fetch('delete_despicableme.php', {
                     method: 'POST',
                     body: params
                 })
@@ -312,7 +309,7 @@ try {
                
                 .catch(error => {
                     console.error('Error:', error);
-                    alert("Terjadi kesalahan saat menghapus review.");
+                    alert("An error occurred while deleting the review.");
                 });
             }
         }
