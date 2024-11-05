@@ -195,14 +195,15 @@ try {
             </section>
             </div>
         </div>
+    </div>
     
     <footer>
-      <div class="footer-links">
-        <a href="../footer/privacy policy.html">Privacy Policy</a>
-        <a href="../footer/ToS.html">Terms of Service</a>
-        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/copyright.html">Copyright</a>
-      </div>
-      <p>&copy; 2024 CSFFilmReview. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
+      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
+      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
+    </div>
+    <p>&copy; 2024 CSFFilmReview. All rights reserved. Film poster from <a href="https://www.themoviedb.org/">TMDB</a>.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

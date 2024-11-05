@@ -566,7 +566,7 @@ i{
 }
 
 footer {
-    background: black;
+    background: #003366;
     color: white;
     text-align: center;
     display: flex;
@@ -575,22 +575,39 @@ footer {
     align-items: center; 
     padding: 20px;
     width: 100%;
+    flex-shrink: 0;
     margin-bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
+    margin-top: 150px;
 }
 
 .footer-links a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
-    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-links a:hover,
 .footer-socials .soc-icon:hover {
-    color: #ff6347;
+    color: #ffde59;
+}
+
+footer a {
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1px;
+}
+
+footer p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 13px;
+}
+footer a:hover{
+    color:#ffde59;
 }
 
 @media screen and (max-width: 1366px) {
