@@ -15,7 +15,7 @@ body {
 
 /* Background hanya untuk halaman pertama */
 .overview {
-    background-image: url("/asset/background.png");
+    background-image: url("/PROJEK-BUAT-WEB-FULLSTACK/asset/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,33 +61,32 @@ body {
     padding: 0 10px;
 }
 
+/* Gaya untuk container utama */
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 2%; 
+    height: 100vh; /
+}
+
+/* Gaya di halaman untuk tombol */
 .button, .button2 {
     background-color: #0E0E1A;
     color: white;
     transition: 0.6s;
-    box-shadow: 0px 0px 60px hsl(232, 85%, 69% / 0.6);
+    box-shadow: 0px 0px 2px;
     padding: 15px 40px; 
     font-size: 18px; 
     border: none;
     border-radius: 30px; 
-    cursor: pointer; 
-    position: absolute;
-    z-index: 1; 
-}
-
-.button {
-    margin-left: 73%;
-    margin-top: 20px;
-}
-
-.button2 {
-    margin-left: 83%;
-    margin-top: 20px;
+    cursor: pointer;
+    margin-top: 25%; /* Jarak vertikal dari tombol ke atas */
 }
 
 .button:hover, .button2:hover {
-    color: #babaff;
-    background: linear-gradient(to right, #9cecfb, #65c7f7, #0052d4);
+    color: #585656;
+    background: white;
 }
 
 .button:active, .button2:active {
@@ -125,7 +124,7 @@ h4 {
     font-family: "Kanit", sans-serif;
     line-height: 1.3;
     position: absolute;
-    top: 59%; /* Sesuaikan posisi top untuk memberikan jarak dari h1 */
+    top: 61%; /* Sesuaikan posisi top untuk memberikan jarak dari h1 */
     left: 50%;
     color: white;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
@@ -180,7 +179,6 @@ h2 {
     transition: 0.5s;
     padding: 70px 10px 20px; 
     position: relative; 
-    /* margin-top: 120%; */
 }
 
 .card img {
