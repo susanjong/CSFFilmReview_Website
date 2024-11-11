@@ -204,7 +204,7 @@
     }
 
     /* Button styling */
-    .social-button {
+    .socialbutton {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -219,17 +219,17 @@
         transition: background-color 0.3s;
     }
 
-    .social-button:hover {
+    .socialbutton:hover {
         background-color: rgba(60, 64, 67, 0.5); /* Gray with 50% opacity */
     }
 
     /* Ikon dan teks desain */
-    .social-button svg {
+    .socialbutton svg {
         width: 24px;
         height: 24px;
     }
 
-    .social-button span {
+    .socialbutton span {
         margin-left: 10px;
         font-size: 16px;
     }
