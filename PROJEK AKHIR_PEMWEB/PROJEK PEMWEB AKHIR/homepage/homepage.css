@@ -15,7 +15,7 @@ body {
 
 /* Background hanya untuk halaman pertama */
 .overview {
-    background-image: url("/PROJEK-BUAT-WEB-FULLSTACK/asset/background.png");
+    background-image: url("/asset/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
