@@ -1,7 +1,7 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
 include 'database.php'; // Pastikan file ini mengembalikan instance PDO
-include 'delete_annabellecreation.php';
+include 'delete_beetlejuice2.php';
 
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validasi input
         if (!empty($komentar)) {
             // Gunakan prepared statement untuk keamanan
-            $query = "INSERT INTO annabellecreation_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
+            $query = "INSERT INTO beetlejuice2_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
             $stmt = $conn->prepare($query);
             
             // Execute the query with all parameters
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM annabellecreation_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM beetlejuice2_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ $average = ['rata_rata_bintang' => 0]; // Default value
 
 // Fetch the average rating
 try {
-    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM annabellecreation_review";
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM beetlejuice2_review";
     $avgStmt = $conn->prepare($avgQuery);
     $avgStmt->execute();
     $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
@@ -65,7 +65,7 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Annabelle_Creation/annabellecreation.css">
+    <link rel="stylesheet" href="/Film/BeetleJuice 2/beetlejuice2.css">
 </head>
 
 <body>
@@ -100,19 +100,19 @@ try {
         <div class="poster"></div>
 
         <div class="details">
-            <h1>ANNABELLE: <br> CREATION</h1>
-            <div class="year">2017, David F.Sandberg</div>
+            <h1>BEETLEJUICE <br> BEETLEJUICE</h1>
+            <div class="year">2024, Tim Burton</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis">
-            Several years after the tragic death of their little girl, a doll maker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the doll maker's possessed creation—Annabelle.
+            After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Betelgeuse, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Horror.html" role="button">Horror</a>
-                <a class="btn btn-primary" href="/Genre/Thriller.html" role="button">Thriller</a>
+                <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
                 <a class="btn btn-primary" href="/Genre/Mystery.html" role="button">Mystery</a>
             </div>
         </div>
@@ -163,13 +163,13 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/annabelle2.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/beetlejuice2.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">ANNABELLE: CREATION
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2017</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">BEETLEJUICE BEETLEJUICE
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2024</span>
                 </h1>
                 <form action="#" method="post">
 
@@ -191,7 +191,7 @@ try {
                     <br><br>      
 
                     <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
-                </form>
+                    </form>
             </section>
             </div>
         </div>
@@ -210,6 +210,17 @@ try {
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var mainContent = document.getElementById("main-content");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "250px";
+                mainContent.style.marginLeft = "250px";
+            }
+        }
 
         function toggleForm() {
             const overlay = document.getElementById('overlay');
@@ -286,7 +297,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_annabellecreation.php', {
+                fetch('delete_beetlejuice2.php', {
                     method: 'POST',
                     body: params
                 })

@@ -286,7 +286,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_ageofultron.php', {
+                fetch('delete_annabellecomeshome.php', {
                     method: 'POST',
                     body: params
                 })
