@@ -1,7 +1,7 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
 include 'database.php'; // Pastikan file ini mengembalikan instance PDO
-include 'delete_frozen.php';
+include 'delete_fastfive.php';
 
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validasi input
         if (!empty($komentar)) {
             // Gunakan prepared statement untuk keamanan
-            $query = "INSERT INTO frozen_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
+            $query = "INSERT INTO fastfive_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
             $stmt = $conn->prepare($query);
             
             // Execute the query with all parameters
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM frozen_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM eeaao_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ $average = ['rata_rata_bintang' => 0]; // Default value
 
 // Fetch the average rating
 try {
-    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM frozen_review";
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM eeaao_review";
     $avgStmt = $conn->prepare($avgQuery);
     $avgStmt->execute();
     $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
@@ -56,7 +56,6 @@ try {
 }
 ?>
 
-<!--untuk memasukan inputan html secara keseluruhan dibagian ini --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +65,7 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Frozen/frozen.css">
+    <link rel="stylesheet" href="/Film/Everything Everywhere All at Once/eeaao.css">
 </head>
 
 <body>
@@ -101,21 +100,19 @@ try {
         <div class="poster"></div>
 
         <div class="details">
-            <h1>FROZEN </h1>
-            <div class="year">2013, Jennifer Lee, Chris Buck & Shane Morris</div>
+            <h1>FAST FIVE</h1>
+            <div class="year">2011 & Daniel Scheinert, Justin Lin, Chris Morgan</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis"> <!--sinopsisi dari film itu--> 
-            Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous 
-            journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, 
-            his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.
+            With her laundromat teetering on the brink of failure and her marriage to wimpy husband Waymond on the rocks, overworked Evelyn Wang struggles to cope with everything, including a tattered relationship with her judgmental father and daughter. And as if facing a gloomy midlife crisis wasn't enough, Evelyn must brace herself up for an unpleasant meeting with an impersonal bureaucrat: Deirdre, the shabbily dressed IRS auditor. However, as the stern agent loses patience, an inexplicable multiverse rift becomes an eye-opening exploration of parallel realities. 
             </p>
             <div class="genre-tags">
-                <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
                 <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
+                <a class="btn btn-primary" href="/Genre/Sci-fi.html" role="button">Sci-Fi</a>
             </div>
         </div>
     </div>
@@ -165,13 +162,13 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/Frozen.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/fast5.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">FROZEN
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2013</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">FAST FIVE
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2011</span>
                 </h1>
                 <form action="#" method="post">
 
@@ -299,7 +296,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_frozen.php', {
+                fetch('delete_fastfive.php', {
                     method: 'POST',
                     body: params
                 })

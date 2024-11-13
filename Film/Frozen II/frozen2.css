@@ -151,7 +151,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/Photos/backdrop/Frozen.jpg');
+    background-image: url('/Photos/backdrop/Fast\ &\ Furious\ 6.jpg');
     border-color: transparent;
 }
 
@@ -167,7 +167,7 @@ body {
 .poster {
     width: 275px;
     height: 392px;
-    background-image: url('/Photos/Frozen.jpg');
+    background-image: url('/Photos/fastnfurious6.jpg');
     margin-top: 23px;
     display: flex;
     background-size: cover;
