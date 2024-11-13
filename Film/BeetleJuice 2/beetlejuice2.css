@@ -10,7 +10,6 @@ header {
     left: 0;
     width: 100%;
     height: 75px;
-    height: 75px;
     color: white;
     padding: 17px;
     display: flex;
@@ -23,7 +22,7 @@ header {
     transition: background 0.6s ease, opacity 0.6s ease;
 }
 
-
+/* Align the navigation menu (if any) to the right */
 header nav {
     margin-left: auto;
     margin-right: 20px;
@@ -36,16 +35,16 @@ header nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
-    padding: 5px 10px;
+    padding: 5px 10px; /* Add some padding for better click area */
     transition: 0.2s;
 }
 
 .header-center {
     color: linear-gradient(45deg, #ffffff, #7e8083);
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between; /* Space between logo and nav */
     width: 100%;
-    align-items: center; 
+    align-items: center; /* Center vertically */
 }
 
 
@@ -90,15 +89,19 @@ nav {
     margin-right: 20px; 
 }
 
+
+
 a.active {
     border-radius: 2px;
 }
+
 
 nav a:hover {
     background: #003366;
     color: #F3C623;
     border-radius: 2px;
 }
+
 
 .dropdown-genre {
     position: relative;
@@ -124,6 +127,7 @@ nav a:hover {
     display: block;
 }
 
+
 .dropdown-content a:hover {
     background-color: transparent; 
     color: white; 
@@ -148,7 +152,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/Photos/backdrop/despicableme.png');
+    background-image: url('/Photos/backdrop/beetlejuice2.png');
     border-color: transparent;
 }
 
@@ -164,7 +168,7 @@ body {
 .poster {
     width: 275px;
     height: 392px;
-    background-image: url('/Photos/despicableme.jpg');
+    background-image: url('/Photos/beetlejuice2.jpg');
     margin-top: 23px;
     display: flex;
     background-size: cover;
@@ -232,7 +236,7 @@ body {
     font-family: "Kanit", sans-serif;
     font-weight: 500;
     background-image: linear-gradient(to bottom right, #003366, #002244);
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 20px black;
     color: white;
     padding: 5px 10px;
     border-radius: 7px;
@@ -473,6 +477,7 @@ textarea {
 }
 
 .submitbutton:hover{
+    background: #003366;
     box-shadow: 0 0 5px black;
 }
 

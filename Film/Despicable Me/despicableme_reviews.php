@@ -1,7 +1,7 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
 include 'database.php'; // Pastikan file ini mengembalikan instance PDO
-include 'delete_captainmarvel.php';
+include 'delete_despicableme.php';
 
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validasi input
         if (!empty($komentar)) {
             // Gunakan prepared statement untuk keamanan
-            $query = "INSERT INTO captainmarvel_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
+            $query = "INSERT INTO despicableme_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
             $stmt = $conn->prepare($query);
             
             // Execute the query with all parameters
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM captainmarvel_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM despicableme_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ $average = ['rata_rata_bintang' => 0]; // Default value
 
 // Fetch the average rating
 try {
-    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM captainmarvel_review";
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM despicableme_review";
     $avgStmt = $conn->prepare($avgQuery);
     $avgStmt->execute();
     $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
@@ -65,7 +65,7 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Captain Marvel/captainmarvel.css">
+    <link rel="stylesheet" href="/Film/Despicable Me/despicableme.css">
 </head>
 
 <body>
@@ -97,51 +97,50 @@ try {
 </header>
 
     <div class="main-content">
-        <div class="poster">
-
-        </div>
+        <div class="poster"></div>
 
         <div class="details">
-            <h1>CAPTAIN MARVEL</h1>
-            <div class="year">2019, Anna Boden, Ryan Fleck</div>
+            <h1>DESPICABLE ME</h1>
+            <div class="year">2010, Chris Renaud</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis">
-            The story follows Carol Danvers as she becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.
+                Villainous Gru lives up to his reputation as a despicable, deplorable and downright unlikable guy when he hatches a plan to steal the moon from the sky. But he has a tough time staying on task after three orphans land in his care.
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Action.html" role="button">Action</a>
-                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
                 <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
-                <a class="btn btn-primary" href="#" role="button">Superhero</a>
+                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
             </div>
         </div>
     </div>
 
     <div class="reviews">
-        <h2 class="judul-review">RECENT REVIEWS</h2><button onclick="toggleForm()" class="addreview">+ Add Reviews</button>
-        <hr>
-        <div class="review-item">
-            <h3 class="reviewer">Asep Capek</h3><p class="date">01 Jan 2024</p>
-            <p class="review">This movie is a DOPE! I've watched it 100x times a day.</p>
-            <div class="rating">Rating: ★ ★ ★ ★ ★ 5.0</div>
+        <div class="review-header">
+            <h2 class="judul-review">RECENT REVIEWS</h2>
+            <button onclick="toggleForm()" class="addreview">+ Add Reviews</button> 
         </div>
+        <hr>
 
         <div>
             <?php foreach ($results as $row): ?>
                 <div class="review-item">
-                    <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
-                    <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    <div class="review-top">
+                        <div class="review-top-left">
+                            <h3 class="reviewer"><?php echo htmlspecialchars($row['username']); ?></h3>
+                            <div class="rating">
+                                <?php echo str_repeat('★ ', $row['bintang']);?> 
+                                <!-- <p class = "number"><?php echo ' ' . number_format($row['bintang'], 1);?></p> -->
+                            </div>
+                        </div>
+                        <p class="date"><?php echo htmlspecialchars(date('d M Y', strtotime($row['tanggal']))); ?></p>
+                    </div>
+                    
                     <p class="review"><?php echo htmlspecialchars($row['komentar']); ?></p>
-                    <div class="rating">
-                        Rating: <?php 
-                            echo str_repeat('★ ', $row['bintang']) . str_repeat('☆ ', 5 - $row['bintang']); 
-                            echo ' ' . number_format($row['bintang'], 1); 
-                        ?>
-                        
+                    <div class="delete-button">                    
                         <?php if (isset($_SESSION['user_id']) && (int)$row['user_id'] === (int)$_SESSION['user_id']): ?>
                             <svg width="24" height="24" class="editreview_button">
                                 <circle cx="12" cy="6" r="1.5"/>
@@ -164,13 +163,13 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/captainmarvel.webp" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/despicableme.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">CAPTAIN MARVEL
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2019</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">DESPICABLE ME
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2010</span>
                 </h1>
                 <form action="#" method="post">
 
@@ -192,17 +191,17 @@ try {
                     <br><br>      
 
                     <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
-                </form>
+                    </form>
             </section>
             </div>
         </div>
     </div>
-
+    
     <footer>
     <div class="footer-links">
-      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
-      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
-      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
     </div>
     <p>&copy; 2024 CSFFilmReview. All rights reserved. Film poster from <a href="https://www.themoviedb.org/">TMDB</a>.</p>
     </footer>
