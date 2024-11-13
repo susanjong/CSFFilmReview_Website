@@ -199,9 +199,9 @@ try {
     
     <footer>
     <div class="footer-links">
-      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
-      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
-      <a href="../PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
     </div>
     <p>&copy; 2024 CSFFilmReview. All rights reserved. Film poster from <a href="https://www.themoviedb.org/">TMDB</a>.</p>
     </footer>
