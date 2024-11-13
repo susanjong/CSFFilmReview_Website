@@ -151,7 +151,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/Photos/backdrop/Frozen.jpg');
+    background-image: url('/Photos/backdrop/Everything\ Everywhere\ All\ at\ Once.jpg');
     border-color: transparent;
 }
 
@@ -167,7 +167,7 @@ body {
 .poster {
     width: 275px;
     height: 392px;
-    background-image: url('/Photos/Frozen.jpg');
+    background-image: url('/Photos/eeaaw.jpg');
     margin-top: 23px;
     display: flex;
     background-size: cover;
@@ -393,7 +393,7 @@ hr {
     display: none; 
     position: fixed;
     width: 750px;
-    height: 500px;
+    height: 550px;
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
