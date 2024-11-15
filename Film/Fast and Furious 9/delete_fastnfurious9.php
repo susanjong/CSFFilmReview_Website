@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($reviewId !== null) {
         // Siapkan statement untuk menghapus record
-        $stmt = $conn->prepare("DELETE FROM frozen_review WHERE id = :id");
+        $stmt = $conn->prepare("DELETE FROM fastfurious9_review WHERE id = :id");
         $stmt->execute(['id' => $reviewId]);
 
         // Cek apakah ada baris yang terhapus

@@ -1,7 +1,7 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
 include 'database.php'; // Pastikan file ini mengembalikan instance PDO
-include 'delete_eeaao.php';
+include 'delete_fastnfurioushobbs.php';
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $komentar = isset($_POST['komentar']) ? trim($_POST['komentar']) : '';
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validasi input
         if (!empty($komentar)) {
             // Gunakan prepared statement untuk keamanan
-            $query = "INSERT INTO eeaao_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
+            $query = "INSERT INTO fastfurioushobbs_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
             $stmt = $conn->prepare($query);
             
             // Execute the query with all parameters
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM eeaao_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM fastfurioushobbs_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id'])) {
 $average = ['rata_rata_bintang' => 0]; // Default value
 // Fetch the average rating
 try {
-    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM eeaao_review";
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM fastfurioushobbs_review";
     $avgStmt = $conn->prepare($avgQuery);
     $avgStmt->execute();
     $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
@@ -57,7 +57,7 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Everything Everywhere All at Once/eeaao.css">
+    <link rel="stylesheet" href="/Film/Fast and Furious Hobbs/fastnfurious.css">
 </head>
 <body>
 <header>
@@ -89,19 +89,22 @@ try {
     <div class="main-content">
         <div class="poster"></div>
         <div class="details">
-            <h1>EVERYTHING <br> EVERYWHERE <br> ALL AT ONCE</h1>
-            <div class="year">2022, Daniel Kwan & Daniel Scheinert</div>
+            <h1>FAST & FURIOUS: <br>HOBBS AND SHAW</h1>
+            <div class="year">2019, Gary Scott Thompson,<br> David Leitch, Chris Morgan</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis"> <!--sinopsisi dari film itu--> 
-            With her laundromat teetering on the brink of failure and her marriage to wimpy husband Waymond on the rocks, overworked Evelyn Wang struggles to cope with everything, including a tattered relationship with her judgmental father and daughter. And as if facing a gloomy midlife crisis wasn't enough, Evelyn must brace herself up for an unpleasant meeting with an impersonal bureaucrat: Deirdre, the shabbily dressed IRS auditor. However, as the stern agent loses patience, an inexplicable multiverse rift becomes an eye-opening exploration of parallel realities. 
+            A team of MI6 agents attempt to retrieve a virus called Snowflake, which can be programmed to wipe out millions of people, from the terrorist 
+            organization Eteon. Brixton Lore, an Eteon operative with advanced cybernetic implants that allow him to perform superhuman feats, arrives and 
+            kills all the agents except their leader, Hattie Shaw, who injects Snowflake into herself as an active carrier and escapes. Brixton frames Hattie 
+            as a traitor who killed his team and stole Snowflake, forcing him to go on the run.
             </p>
             <div class="genre-tags">
-                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
-                <a class="btn btn-primary" href="/Genre/Sci-fi.html" role="button">Sci-Fi</a>
+                <a href="/Genre/Action.html" class="genre">Action</a>
+                <a href="/Genre/Comedy.html" class="genre">Comedy</a>
             </div>
         </div>
     </div>
@@ -149,13 +152,12 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/eeaaw.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/hobbsnshaw.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">EVERYTHING EVERYWHERE
-                ALL AT ONCE
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2022</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">FAST & FURIOUS: <br>HOBBS AND SHAW
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2019</span>
                 </h1>
                 <form action="#" method="post">
                     <textarea id="komentar" name="komentar" placeholder="Add your review.." required></textarea><br>
@@ -267,7 +269,7 @@ try {
                 if (confirm("Are you sure you want to delete this review?")) {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
-                fetch('delete_eeaao.php', {
+                fetch('delete_fastnfurioushobbs.php', {
                     method: 'POST',
                     body: params
                 })
