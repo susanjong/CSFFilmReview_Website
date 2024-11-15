@@ -152,8 +152,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/Photos/backdrop/Everything\ \ Everywhere\ All\ at\ Once.jpg');
-    border-color: transparent;
+    background-image: url('/Photos/backdrop/Fast\ &\ Furious\ Hobbs\ and\ Shaw.jpg');
 }
 
 .main-content {
@@ -168,7 +167,7 @@ body {
 .poster {
     width: 275px;
     height: 392px;
-    background-image: url('/Photos/eeaaw.jpg');
+    background-image: url('/Photos/hobbsnshaw.jpg');
     margin-top: 23px;
     display: flex;
     background-size: cover;
