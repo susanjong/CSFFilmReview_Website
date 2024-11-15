@@ -67,6 +67,16 @@ body {
     color: #ffffff; /* Ensure text color remains the same on hover */
 }
 
+.settings-btn {
+    background-color: #033f7b;
+    border: none;
+}
+
+.settings-btn:hover {
+    background-color: #003366;
+    color: #ffffff; /* Ensure text color remains the same on hover */
+}
+
 .signout-btn {
     background-color: #6a1b04;
     border: none;
