@@ -56,7 +56,6 @@ try {
 }
 ?>
 
-<!--untuk memasukan inputan html secara keseluruhan dibagian ini --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,16 +101,17 @@ try {
 
         <div class="details">
             <h1>FROZEN </h1>
-            <div class="year">2013, Jennifer Lee, Chris Buck & Shane Morris</div>
+            <div class="year">2013, Jennifer Lee, <br> Chris Buck, Allison Schroeder</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
-            <p class="synopsis"> <!--sinopsisi dari film itu--> 
-            Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous 
-            journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, 
-            his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.
+            <p class="synopsis">
+            Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. 
+            Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. 
+            She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she 
+            will find out what friendship, courage, family, and true love really means.
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
@@ -170,7 +170,7 @@ try {
 
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">FROZEN
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">FROZEN 
                 <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2013</span>
                 </h1>
                 <form action="#" method="post">
@@ -200,29 +200,18 @@ try {
     </div>
     
     <footer>
-      <div class="footer-links">
-        <a href="../footer/privacy policy.html">Privacy Policy</a>
-        <a href="../footer/ToS.html">Terms of Service</a>
-        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/copyright.html">Copyright</a>
-      </div>
-      <p>&copy; 2024 CSFFilmReview. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
+    </div>
+    <p>&copy; 2024 CSFFilmReview. All rights reserved. Film poster from <a href="https://www.themoviedb.org/">TMDB</a>.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            var mainContent = document.getElementById("main-content");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-                mainContent.style.marginLeft = "0";
-            } else {
-                sidebar.style.width = "250px";
-                mainContent.style.marginLeft = "250px";
-            }
-        }
 
         function toggleForm() {
             const overlay = document.getElementById('overlay');

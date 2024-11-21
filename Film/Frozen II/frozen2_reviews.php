@@ -56,7 +56,6 @@ try {
 }
 ?>
 
-<!--untuk memasukan inputan html secara keseluruhan dibagian ini --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,16 +101,16 @@ try {
 
         <div class="details">
             <h1>FROZEN II</h1>
-            <div class="year">2019, Kristen Anderson-Lopez, <br> Robert Lopez & March Smith</div> 
+            <div class="year">2019, Jennifer Lee,  Chris <br>Buck, Allison Schroeder</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
-            <p class="synopsis"> <!--sinopsisi dari film itu--> 
-            Young Anna and Elsa playing a game with Elsa’s snow creations in an enchanted forest of their own creation. King Agnarr and Queen Iduna enter, 
-            and Agnarr tells the girls he has seen an enchanted forest in real life. In his youth, he joined his father, King Runeard, and other Arendellian 
-            soldiers to venture into the Enchanted Forest, where they came to know the four spirits of the forest – Earth, Fire, Water, and Air.
+            <p class="synopsis">
+            Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to a strange and magical land. They set out to discover the origin 
+            of Elsa's powers and also to save their kingdom. This time there will be lyrics so that the audience can sing along with their 
+            favorite Frozen II characters.
             </p>
             <div class="genre-tags">
                 <a class="btn btn-primary" href="/Genre/Comedy.html" role="button">Comedy</a>
@@ -200,29 +199,18 @@ try {
     </div>
     
     <footer>
-      <div class="footer-links">
-        <a href="../footer/privacy policy.html">Privacy Policy</a>
-        <a href="../footer/ToS.html">Terms of Service</a>
-        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/copyright.html">Copyright</a>
-      </div>
-      <p>&copy; 2024 CSFFilmReview. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
+    </div>
+    <p>&copy; 2024 CSFFilmReview. All rights reserved. Film poster from <a href="https://www.themoviedb.org/">TMDB</a>.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            var mainContent = document.getElementById("main-content");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-                mainContent.style.marginLeft = "0";
-            } else {
-                sidebar.style.width = "250px";
-                mainContent.style.marginLeft = "250px";
-            }
-        }
 
         function toggleForm() {
             const overlay = document.getElementById('overlay');
