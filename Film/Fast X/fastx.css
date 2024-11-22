@@ -9,6 +9,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 75px;
+    height: 75px;
     color: white;
     padding: 17px;
     display: flex;
@@ -17,10 +19,11 @@ header {
     font-size: 24px;
     font-weight: bold;
     z-index: 100000;
+    background-color: transparent;
     transition: background 0.6s ease, opacity 0.6s ease;
 }
 
-/* Align the navigation menu (if any) to the right */
+
 header nav {
     margin-left: auto;
     margin-right: 20px;
@@ -33,35 +36,18 @@ header nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
-    padding: 5px 10px; /* Add some padding for better click area */
+    padding: 5px 10px;
     transition: 0.2s;
 }
 
 .header-center {
     color: linear-gradient(45deg, #ffffff, #7e8083);
     display: flex;
-    justify-content: space-between; /* Space between logo and nav */
+    justify-content: space-between; 
     width: 100%;
-    align-items: center; /* Center vertically */
+    align-items: center; 
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-    color: white;
-    padding: 17px;
-    display: flex;
-    align-items: center;  
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    z-index: 100000;
-    transition: background-color 0.6s ease;
-    background-color: transparent;
-}
 
 header::before {
     content: '';
@@ -82,7 +68,7 @@ header.sticky::before {
 }
 
 header.sticky {
-    padding: 17px; /* Reduced padding when sticky */
+    padding: 17px; 
     transition: 0.3s ease-in-out;
 }
 
@@ -95,29 +81,25 @@ header.sticky {
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);   
-    margin-left: 20px; /* Adjust as needed */
+    margin-left: 20px; 
 }
 
 nav {
     display: block;
-    align-items: center; /* Center items vertically */
-    margin-right: 20px; /* Space to the right */
+    align-items: center; 
+    margin-right: 20px; 
 }
 
-
-/* Active link style */
 a.active {
     border-radius: 2px;
 }
 
-/* Hover effect */
 nav a:hover {
     background: #003366;
     color: #F3C623;
     border-radius: 2px;
 }
 
-/* Dropdown styles */
 .dropdown-genre {
     position: relative;
     display: inline-block;
@@ -128,8 +110,8 @@ nav a:hover {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6); 
     min-width: 160px;
-    max-height: 200px; /* Set a max height for the dropdown */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 200px; 
+    overflow-y: auto; 
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
@@ -142,11 +124,10 @@ nav a:hover {
     display: block;
 }
 
-/* Change color to red on hover */
 .dropdown-content a:hover {
-    background-color: transparent; /* Keep background transparent */
-    color: white; /* Change text color to red */
-    opacity: 1; /* Ensure opacity remains 1 */
+    background-color: transparent; 
+    color: white; 
+    opacity: 1; 
 }
 
 .dropdown-genre:hover .dropdown-content {
@@ -183,7 +164,7 @@ body {
 .poster {
     width: 275px;
     height: 392px;
-    background-image: url('/Photos/fastx.jpg');
+    background-image: url('/Photos/fast\ x.webp');
     margin-top: 23px;
     display: flex;
     background-size: cover;
@@ -251,7 +232,7 @@ body {
     font-family: "Kanit", sans-serif;
     font-weight: 500;
     background-image: linear-gradient(to bottom right, #003366, #002244);
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 5px black;
     color: white;
     padding: 5px 10px;
     border-radius: 7px;
@@ -492,7 +473,6 @@ textarea {
 }
 
 .submitbutton:hover{
-    background: #003366;
     box-shadow: 0 0 5px black;
 }
 
@@ -533,6 +513,7 @@ textarea {
 .editreview_button:hover{
     fill: #ffde59;
 }
+
 
 .dropdown {
     display: none; 
