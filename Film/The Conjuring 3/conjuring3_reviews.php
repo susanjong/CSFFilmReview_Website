@@ -1,7 +1,8 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
 include 'database.php'; // Pastikan file ini mengembalikan instance PDO
-include 'delete_fastnfurious5.php';
+include 'delete_conjuring3.php';
+
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $komentar = isset($_POST['komentar']) ? trim($_POST['komentar']) : '';
@@ -9,14 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];
+
         // Validasi input
         if (!empty($komentar)) {
             // Gunakan prepared statement untuk keamanan
-            $query = "INSERT INTO fastfurious5_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
+            $query = "INSERT INTO theconjuring3_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
             $stmt = $conn->prepare($query);
             
             // Execute the query with all parameters
             $result = $stmt->execute([':komentar' => $komentar, ':bintang' => $bintang, ':user_id' => $user_id]);
+
         } else {
             echo "<p>Komentar tidak boleh kosong.</p>";
         }
@@ -24,21 +27,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: ' . $_SERVER['PHP_SELF']);
     exit;  
 }
+
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM fastfurious5_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM theconjuring3_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 $average = ['rata_rata_bintang' => 0]; // Default value
+
 // Fetch the average rating
 try {
-    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM fastfurious5_review";
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM theconjuring3_review";
     $avgStmt = $conn->prepare($avgQuery);
     $avgStmt->execute();
     $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
+
     // If no ratings exist, set default
     if ($average === false || $average['rata_rata_bintang'] === null) {
         $average['rata_rata_bintang'] = 0; // Set default if no average
@@ -48,6 +55,7 @@ try {
     error_log($e->getMessage());
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,8 +65,9 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Fast Five/fastnfurious5.css">
+    <link rel="stylesheet" href="/Film/The Conjuring 3/conjuring3.css">
 </head>
+
 <body>
 <header>
     <div class="logo">CSFFilmReview</div>
@@ -86,31 +95,36 @@ try {
         </nav>
     </section>
 </header>
+
     <div class="main-content">
         <div class="poster"></div>
+
         <div class="details">
-            <h1>FAST FIVE</h1>
-            <div class="year">2011, Gary Scott Thompson,<br> Justin Lin, Chris Morgan</div>
+            <h1>THE CONJURING: THE <br> 
+            DEVIL MADE DO IT</h1>
+            <div class="year">2021, Carey Hayes, Chad Hayes,  <br>  David Leslie Johnson-McGoldrick</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
-            <p class="synopsis"> <!--sinopsisi dari film itu--> 
-            Awaiting Dom's arrival, Mia and Brian join their friend Vince (Matt Schulze) (from the first Fast and Furious film) and other participants on a job to steal three cars from a train. While aboard the train, Brian and Mia discover the train is carrying DEA agents and that the cars are seized property. When Dom arrives with the rest of the participants, he realizes that one of them, Zizi (Michael Irby), is only interested in stealing one car (a Ford GT40). Dom has Mia steal the car herself while Dom and Brian fight Zizi and his henchmen, with Zizi killing the DEA agents assigned to the vehicles. Dom and Brian are captured and brought to crime lord and owner of the cars Hernan Reyes (Joaquim de Almeida), Zizi's boss, where he orders the pair be interrogated to discover the location of the car. 
-            </p>
+            <p class="synopsis">
+            In 1981, demonologists Ed and Lorraine Warren document the exorcism of 8-year-old David Glatzel, attended by his family, his sister Debbie, her boyfriend Arne Johnson, and Father Gordon in the town of Brookfield, Connecticut. During the exorcism, Arne invites the demon to enter his body instead of David's. Ed witnesses the demon transport itself from David's body to Arne's whilst he suffers from a heart attack, and is taken to a hospital in a comatose state.
+            The following month, Ed wakes up at the hospital and reveals to Lorraine that he witnessed the demon enter Arne's body. She sends the police to the kennel and warns them that a tragedy will occur there. Arne and Debbie return to their apartment located above a kennel where Debbie works. After feeling unwell, Arne murders his landlord, Bruno Sauls, by stabbing him 22 times under the influence of demonic possession.
             <div class="genre-tags">
-                <a href="/Genre/Crime.html" class="genre">Crime</a>
-                <a href="/Genre/Thriller.html" class="genre">Thriller</a>
+                <a class="btn btn-primary" href="/Genre/Horror.html" role="button">Horror</a>
+                <a class="btn btn-primary" href="/Genre/Mystery.html" role="button">Mystery</a>
             </div>
         </div>
     </div>
+
     <div class="reviews">
         <div class="review-header">
             <h2 class="judul-review">RECENT REVIEWS</h2>
             <button onclick="toggleForm()" class="addreview">+ Add Reviews</button> 
         </div>
         <hr>
+
         <div>
             <?php foreach ($results as $row): ?>
                 <div class="review-item">
@@ -149,15 +163,18 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/fast5.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/theconjuring3.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
+
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">FAST FIVE 
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2011</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">The Conjuring: The <br> Devil Made Me Do It
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2021</span>
                 </h1>
                 <form action="#" method="post">
+
                     <textarea id="komentar" name="komentar" placeholder="Add your review.." required></textarea><br>
+
                     <div class="rating_">
                         <label for="bintang" style="font-size: 18px; margin-right: 15px;">Rating</label>
                         <div class="stars">
@@ -172,6 +189,7 @@ try {
                         <input type="submit" value="Submit" class="submitbutton">
                     </div>
                     <br><br>      
+
                     <div id="closeFormButton" onclick="toggleForm()" class="close-button">×</div>
                 </form>
             </section>
@@ -180,28 +198,19 @@ try {
     </div>
     
     <footer>
-      <div class="footer-links">
-        <a href="../footer/privacy policy.html">Privacy Policy</a>
-        <a href="../footer/ToS.html">Terms of Service</a>
-        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/copyright.html">Copyright</a>
-      </div>
-      <p>&copy; 2024 CSFFilmReview. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/privacy policy.html">Privacy Policy</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/ToS.html">Terms of Service</a>
+        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/footer/sitemap.html">Sitemap</a>
+    </div>
+    <p>&copy; 2024 CSFFilmReview. All rights reserved. Film poster from <a href="https://www.themoviedb.org/">TMDB</a>.</p>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            var mainContent = document.getElementById("main-content");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-                mainContent.style.marginLeft = "0";
-            } else {
-                sidebar.style.width = "250px";
-                mainContent.style.marginLeft = "250px";
-            }
-        }
+
         function toggleForm() {
             const overlay = document.getElementById('overlay');
             const form = document.getElementById('reviewForm');
@@ -214,20 +223,24 @@ try {
                 form.style.display = "none"; 
             }
         }
+
         document.addEventListener('DOMContentLoaded', function() {
         const stars = document.querySelectorAll('.star');
         const ratingInput = document.getElementById('bintang');
+
         stars.forEach(star => {
             star.addEventListener('mouseover', selectStars);
             star.addEventListener('mouseout', unselectStars);
             star.addEventListener('click', setRating);
         });
+
         function selectStars(e) {
             const selectedValue = e.target.dataset.value;
             stars.forEach(star => {
             star.classList.toggle('active', star.dataset.value <= selectedValue);
             });
         }
+
         function unselectStars() {
             stars.forEach(star => {
             star.classList.remove('active');
@@ -239,18 +252,23 @@ try {
             });
             }
         }
+
         function setRating(e) {
             const ratingValue = e.target.dataset.value;
             ratingInput.value = ratingValue;
             selectStars(e);
         }
         });
+
         const starReviewElement = document.getElementById('averageRating');
+
         const averageRating = <?php echo json_encode(number_format($average['rata_rata_bintang'], 1)); ?>;
         starReviewElement.innerText = averageRating;
+
         document.querySelectorAll('.editreview_button').forEach(button => {
             button.addEventListener('click', toggleDropdown);
         });
+
         function toggleDropdown(event) {
             const dropdown = event.target.nextElementSibling; 
             const isVisible = dropdown.style.display === 'block';
@@ -262,11 +280,13 @@ try {
             dropdown.style.display = isVisible ? 'none' : 'block';
             event.stopPropagation(); 
         }
+
         function deleteReview(reviewId) {
                 if (confirm("Are you sure you want to delete this review?")) {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
-                fetch('delete_fastnfurious5.php', {
+
+                fetch('delete_conjuring3.php', {
                     method: 'POST',
                     body: params
                 })
@@ -282,10 +302,13 @@ try {
                 });
             }
         }
+
         let lastScrollTop = 0;
+
         window.addEventListener("scroll", function() {
             let header = document.querySelector("header");
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
             if (scrollTop > lastScrollTop) {
                 // Scrolling down
                 header.classList.add("sticky");
