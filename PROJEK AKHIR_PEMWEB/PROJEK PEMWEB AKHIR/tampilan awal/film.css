@@ -135,12 +135,13 @@ header a:hover{
     flex-direction: column;
     justify-content: center;    
     position: absolute;
-    left: 5%;
+    left: 6%;
     top: 0;                              
     bottom: 0;             
     margin: auto;          
     padding: 0 15px;
     box-sizing: border-box;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .slider .list .item .content .title,
@@ -159,7 +160,7 @@ header a:hover{
 
 .slider .list .item .button{
     display: grid;
-    grid-template-columns: repeat(2, 130px);
+    grid-template-columns: repeat(2, 200px);
     grid-template-rows: 40px;
     gap: 5px;
 }
@@ -170,8 +171,9 @@ header a:hover{
     color: #ffffff;
     font-family: "Kanit", sans-serif;
     font-weight: 500;
+    font-size: 17px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.3s;
     letter-spacing: 2px;
 }
 
@@ -201,21 +203,32 @@ header a:hover{
 }
 
 /* Thumbnail Section  */
-.thumbnail{
+.thumbnail {
     position: absolute;
-    bottom: 70px;
-    left: 55%;
-    width: max-content;
+    top: 63%;
+    left: 57%;
     z-index: 100;
     display: flex;
-    gap: 20px;
 }
 
-.thumbnail .item{
+.thumbnail .item {
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
+    transition: transform 1s ease;
+    justify-content: flex-end;
+}
+
+.thumbnail .item:nth-child(1) {
+    transform: scale(1.2); 
+    margin-right: 25px;
+}
+
+.thumbnail .item:nth-child(2),
+.thumbnail .item:nth-child(3),
+.thumbnail .item:nth-child(4) {
+    transform: scale(0.9);
 }
 
 .thumbnail .item img{
@@ -230,9 +243,9 @@ header a:hover{
 /* nextPrevArrows Section  */
 .PrevArrows{
     position: absolute;
-    top: 56%;
-    right: 22%;
-    z-index: 100;
+    top: 73%;
+    right: 29.7%;
+    z-index: 110;
     width: 300px;
     max-width: 30%;
     display: flex;
@@ -244,7 +257,8 @@ header a:hover{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #003366;
+    color: #ffde59;
     border: none;
     font-family: monospace;
     font-weight: bold;
@@ -252,19 +266,17 @@ header a:hover{
     cursor: pointer;
 }
 .PrevArrows button:hover{
-    background-color: #003366;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #003366;
 }
 
 .nextArrows{
     display: flex;
     align-items: center;
     position: absolute;
-    top: 56%;
-    right:3%;
+    top: 73%;
+    right:3.3%;
     z-index: 100;
-    width: 300px;
-    max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -274,17 +286,17 @@ header a:hover{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #003366;
     border: none;
-    color: #003366;
+    color: #ffde59;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
     cursor: pointer;
 }
 .nextArrows button:hover{
-    background-color: #003366;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #003366;
 }
 
 /* Animation Part */
@@ -297,7 +309,7 @@ header a:hover{
 .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
-.slider .list .item:nth-child(1) .content .buttons
+.slider .list .item:nth-child(1) .content .button
 {
     transform: translateY(50px);
     filter: blur(20px);
