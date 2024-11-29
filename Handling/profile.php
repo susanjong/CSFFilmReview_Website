@@ -31,7 +31,7 @@ if ($user):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="/Handling/profile.css">
 </head>
 <body>
     <div class="profile-card">
@@ -48,6 +48,7 @@ if ($user):
             </div>
             <div class="button-section text-center">
                 <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html" class="btn homepage-btn">Homepage</a>
+                <a href="/Handling/settings.php" class="btn settings-btn">Settings</a>
                 <a href="/Handling/sign-out.php" class="btn signout-btn">Sign Out</a>
             </div>
         </div>
