@@ -13,9 +13,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('sign.jpg');
+    background-size: 1500px 735px; /* lebar dlu baru tinggi*/
     background-image: url('bg.jpg');
     background-size: 1500px 735px; /* lebar dlu baru tinggi*/
-
     color: #ffffff; 
   }
 
@@ -230,7 +231,7 @@
 /*untuk forgot password di sign in*/
 .forgot-password {
     font-size: 14px; 
-    color: #1500fb; 
+    color: #0073ff; 
     text-decoration: none;
     float: right;
     margin-right: 10px;
