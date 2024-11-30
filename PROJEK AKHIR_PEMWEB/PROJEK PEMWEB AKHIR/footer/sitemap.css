@@ -1,4 +1,128 @@
-#map {
-    height: 400px;
-    width: 100%; 
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body {
+    height: 100%; /* Pastikan html dan body mencakup seluruh viewport */
+    margin: 0; /* Hilangkan margin bawaan */
+    overflow: hidden
+  }
+  
+body {
+    background: linear-gradient(180deg, #000000f5 39.25%, #003b76 100%);
+    margin: 0; 
+    font-family: 'Montserrat';
 }
+
+  h1 {
+    text-align: center;
+    margin-top: 90px;
+    color: white;
+ }
+ 
+    .logo {
+        position: fixed; 
+        top: 10px;           
+        left: 20px;          
+        display: flex;
+        align-items: center; 
+        z-index: 10;  /* agar logo tetap di atas elemen lain */
+        gap: 15px;
+      }
+
+
+div.gallery {
+    border: 1px solid #ccc;
+    margin-left: 60px;
+    overflow: hidden; 
+    border-radius: 10px; 
+    margin-left: 100px; 
+  }
+  
+  div.gallery:hover {
+    border: 2px solid #000000;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 10px;
+    text-align: center;
+    color: white; 
+    font: 14px; 
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+    margin-top: 50px;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 30px; /* Kurangi margin atas */
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    div.gallery {
+        margin-left: 10px; /* Margin lebih kecil */
+    }
+}
+  
+@media only screen and (max-width: 768px) {
+    .responsive {
+        width: 100%; /* Satu kolom pada perangkat kecil */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    div.gallery {
+        margin-left: 20px; /* Kurangi margin untuk layar kecil */
+    }
+}
+
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  #map {
+    width: 65%;
+    height: 500px;
+    margin: -33%;
+    
+    overflow-y: hidden; /* Sembunyikan scroll vertikal */
+    white-space: nowrap; /* Hindari elemen turun ke baris baru */
+    margin-left: 30%; 
+  }
+  
