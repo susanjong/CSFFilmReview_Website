@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('sign.png');
+    background-image: url('signn.png');
     color: #000000; 
   }
 
@@ -157,7 +157,7 @@
     padding: 10px; 
     border: none;
     border-radius: 5px;
-    background-color: #464545; 
+    background-color: #464444f3; 
     color: #fff;
     font-size: 16px; 
   }
