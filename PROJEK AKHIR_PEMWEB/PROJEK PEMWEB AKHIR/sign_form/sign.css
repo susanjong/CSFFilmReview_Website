@@ -13,8 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #000000f5 39.25%, #003b76 100%);
-    color: #fff; /* White text color */
+    background-image: url('sign.png');
+    color: #000000; 
   }
 
   /*untk atur keseluruhan container*/
@@ -46,10 +46,9 @@
     top: 0%;
     left: 0;
     backface-visibility: hidden;
-    background-color: #44414172; 
+    background-color: #ffffff4e; 
     padding: 40px; /* Increased padding */
     border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(113, 113, 113, 0.4);
   }
   
   /* untuk atur style berpindah 180 derajat*/
@@ -183,7 +182,7 @@
     text-align: center;
     margin-top: 20px; 
     font-size: 16px; 
-    color: #aaa;
+    color: #e2e2e2;
   }
   
   .switch a {
@@ -196,67 +195,9 @@
   }
   
 
-     /* Desain untuk container dari button gmail*/
-     .social-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
 
-    /* Button styling */
-    .socialbutton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 250px;
-        padding: 12px;
-        color: white;
-        background-color: transparent; /* Initially transparent */
-        border: 1px solid rgba(128, 128, 128, 0.5);
-        border-radius: 5px;
-        text-decoration: none;
-        font-family: Arial, sans-serif;
-        transition: background-color 0.3s;
-    }
+  
 
-    .socialbutton:hover {
-        background-color: rgba(60, 64, 67, 0.5); /* Gray with 50% opacity */
-    }
-
-    /* Ikon dan teks desain */
-    .socialbutton svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .socialbutton span {
-        margin-left: 10px;
-        font-size: 16px;
-    }
-
-    /* container dari garis*/
-.divider-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 24px;
-}
-
-/* untuk buat garis di or continue */
-.divider-line {
-    width: 25%;
-    height: 1px;
-    background-color: #ccc;
-    opacity: 0.5;
-}
-
-/* unutk buat diveder di bagian or continue*/
-.divider-text {
-    margin: 0 10px;
-    color: #888;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-}
 
 /*untuk mengatur ikon disetiap menu isi data*/
 .input-field {
@@ -268,7 +209,7 @@
     left: 10px;
     top: 70%;
     transform: translateY(-50%);
-    color: #7f7f7f; /* Icon color */
+    color: #9f9d9d; /* Icon color */
   }
   
   .input-field input {
@@ -290,7 +231,7 @@
 /*untuk forgot password di sign in*/
 .forgot-password {
     font-size: 14px; 
-    color: #60a5fa; 
+    color: #1500fb; 
     text-decoration: none;
     float: right;
     margin-right: 10px;
