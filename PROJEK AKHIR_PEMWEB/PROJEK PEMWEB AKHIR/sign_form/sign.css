@@ -13,8 +13,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('signn.png');
-    color: #000000; 
+    background-image: url('bg.jpg');
+    background-size: 1500px 735px; /* lebar dlu baru tinggi*/
+
+    color: #ffffff; 
   }
 
   /*untk atur keseluruhan container*/
@@ -46,7 +48,8 @@
     top: 0%;
     left: 0;
     backface-visibility: hidden;
-    background-color: #ffffff4e; 
+    background: #373333e7;
+
     padding: 40px; /* Increased padding */
     border-radius: 10px;
   }
