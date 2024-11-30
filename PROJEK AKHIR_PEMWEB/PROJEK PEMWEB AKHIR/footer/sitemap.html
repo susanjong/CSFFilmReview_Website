@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokasi Developer</title>
-    <link rel="stylesheet" href="sitemap.css"/>
-</head>
-<body>
-    <div id="map" name="map">
-    </div>
+<html>
+    <head>
+<link rel="stylesheet" type="text/css" href="sitemap.css">
+<title> Lokasi Developer dan Profil Dosen</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 
-    <!--untuk hubungkan file js dan buat api (map)-->
-    <script src="sitemap.js"></script>
-    <script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSyeT3ed8_nmf_1VGDtIOF0Z0FYT88xg945v&callback=initMap"></script>
+<body>
+
+<h1>Profil Dosen dan Lokasi Developer </h1>
+
+<div class="responsive">
+
+    <div class="logo">
+    <img src="../Gambar Profile/logousu.png" alt="USU" width="50" height="50">
+    <img src="../Gambar Profile/fasilkom ti.png" alt="USU" width="200" height="55">
+  </div>
+
+  <div class="gallery">
+      <img src="../Gambar Profile/Dosen Dewi.webp" alt="Bu Dewi" width="50" height="50">
+    </a>
+    <div class="desc"> Dewi Sartika Br Ginting, S.Kom., M.Kom</div>
+    <div class="desc"> Dosen Mata Kuliah Pemrograman Web</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div id="map" name="map">
+</div>
+
+<!--untuk hubungkan file js dan buat api (map)-->
+<script src="sitemap.js"></script>
+<script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSyeT3ed8_nmf_1VGDtIOF0Z0FYT88xg945v&callback=initMap"></script>
+
 </body>
 </html>

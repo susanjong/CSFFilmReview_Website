@@ -89,7 +89,7 @@ try {
     <div class="main-content">
         <div class="poster"></div>
         <div class="details">
-            <h1>EVERYTHING EVERYWHERE <br> ALL AT ONCE</h1>
+            <h1>EVERYTHING <br> EVERYWHERE <br> ALL AT ONCE</h1>
             <div class="year">2022, Daniel Kwan & Daniel Scheinert</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
@@ -153,7 +153,7 @@ try {
             </section>
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">EVERYTHING EVERYWHERE
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">EVERYTHING EVERYWHERE <br>
                 ALL AT ONCE
                 <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2022</span>
                 </h1>

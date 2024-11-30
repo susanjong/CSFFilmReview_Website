@@ -1,50 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000000; 
-    color: #ffffff; 
+html, body {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    color: #ffffff;
+    height: 100%; /* Pastikan html dan body memiliki tinggi 100% */
+    background: linear-gradient(180deg, #000000f5 39.25%, #003b76 100%);
+    overflow: hidden;
 }
 
 /* Container untuk update form password */
 .container {
-    max-width: 400px; /
-    margin: 50px auto;
-    padding: 20px; 
-    background-color: #083493; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 80px auto; 
+    padding: 30px;
+    background-color: #0834936b;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    color: #ffffff;
+    width: 400px;
+    max-width: 90%; 
 }
 
+.logo {
+
+        align-self: flex-start; /* Pastikan logo berada di sisi kiri */
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        background: linear-gradient(45deg, #ffffff, #7e8083);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);   
+        margin-left: 30px; /* Adjust as needed */
+      
+        font-size: xx-large;
+    
+}
+/* Heading */
 h2 {
     text-align: center; 
-    margin-bottom: 20px; 
+    margin-bottom: 30px; /* Tambahkan jarak bawah */
     font-size: 24px; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Form elements */
 form {
     display: flex; 
     flex-direction: column; 
+    width: 100%; /* Form mengikuti lebar container */
 }
 
 div {
-    margin-bottom: 15px; 
+    margin-bottom: 20px; /* Tambahkan jarak antara div */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Label rata kiri */
 }
 
 label {
     font-weight: bold; 
-    margin-bottom: 5px; 
+    margin-bottom: 8px; /* Tambahkan jarak antara label dan input */
 }
 
 /* Input fields */
 input[type="email"],
 input[type="password"] {
-    padding: 10px; /* Padding dalam inputan */
+    width: 100%; 
+    width: 400px; 
+    padding: 10px;
     border: 1px solid #ccc; 
     border-radius: 4px; 
     font-size: 16px; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
 }
 
 /* Input fields focus effect */
@@ -52,22 +87,43 @@ input[type="email"]:focus,
 input[type="password"]:focus {
     border-color: #007BFF; 
     outline: none; 
+    box-shadow: 0 0 7px rgba(0, 123, 255, 0.5); /* Efek glow saat fokus */
 }
 
-/* untuk buat desain buttonnya */
+/* Button styling */
 button {
-    padding: 10px; 
-    background-color: #007BFF; /
+    padding: 12px; 
+    background-color: #007BFF; 
     color: white; 
     border: none; 
     border-radius: 4px; 
     font-size: 16px; 
     cursor: pointer; 
-    transition: background-color 0.3s; /* untuk berubah warna background */
+    transition: background-color 0.3s; 
+    width: 100%; /* Lebar tombol mengikuti form */
+    
 }
 
 button:hover {
-    background-color: #0056b3; 
+    background-color: #0057b3b6; 
+}
+
+/* Link styling */
+a {
+    text-decoration: none; 
+    display: inline-block; 
+    margin-top: 10px; /* Jarak antara tombol */
+    width: 100%; /* Agar tombol back sejajar */
+}
+
+a button {
+    background-color: #555555; /* Warna tombol back */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+a button:hover {
+    background-color: #333333; /* Warna tombol back saat hover */
 }
 
 /* Responsive design */
@@ -78,5 +134,9 @@ button:hover {
 
     h2 {
         font-size: 20px; 
+    }
+
+    button {
+        font-size: 14px; 
     }
 }

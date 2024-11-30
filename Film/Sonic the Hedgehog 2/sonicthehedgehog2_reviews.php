@@ -163,7 +163,7 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/soni2c.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/sonic2.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
