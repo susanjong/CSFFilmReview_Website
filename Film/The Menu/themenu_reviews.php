@@ -1,7 +1,7 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
 include 'database.php'; // Pastikan file ini mengembalikan instance PDO
-include 'delete_ageofultron.php';
+include 'delete_themenu.php';
 
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validasi input
         if (!empty($komentar)) {
             // Gunakan prepared statement untuk keamanan
-            $query = "INSERT INTO ageofultron_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
+            $query = "INSERT INTO themenu_review (komentar, bintang, user_id) VALUES (:komentar, :bintang, :user_id)";
             $stmt = $conn->prepare($query);
             
             // Execute the query with all parameters
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Query untuk mengambil data dari tabel review
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $query = "SELECT er.*, u.username FROM ageofultron_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
+    $query = "SELECT er.*, u.username FROM themenu_review er JOIN users u ON er.user_id = u.id ORDER BY er.tanggal DESC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ $average = ['rata_rata_bintang' => 0]; // Default value
 
 // Fetch the average rating
 try {
-    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM ageofultron_review";
+    $avgQuery = "SELECT AVG(bintang) AS rata_rata_bintang FROM themenu_review";
     $avgStmt = $conn->prepare($avgQuery);
     $avgStmt->execute();
     $average = $avgStmt->fetch(PDO::FETCH_ASSOC);
@@ -65,7 +65,7 @@ try {
     <title>Tampilan Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Film/Age of Ultron/ageofultron.css">
+    <link rel="stylesheet" href="/Film/The Menu/themenu.css">
 </head>
 
 <body>
@@ -100,20 +100,20 @@ try {
         <div class="poster"></div>
 
         <div class="details">
-            <h1>AVENGERS: <br> AGE OF ULTRON</h1>
-            <div class="year">2015, Joss Whedon</div>
+            <h1>THE MENU</h1>
+            <div class="year">2022, Mark Mylod</div>
             <div class="starreview-container">
                 <div class="bintang_review">&#9733;</div>
                 <div class="starreview" id="averageRating"><?php echo number_format($average['rata_rata_bintang'], 1); ?></div>
             </div>
             <br>
             <p class="synopsis">
-            When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and Earth’s Mightiest Heroes are put to the ultimate test as the fate of the planet hangs in the balance. As the villainous Ultron emerges, it is up to The Avengers to stop him from enacting his terrible plans, and soon uneasy alliances and unexpected action pave the way for an epic and unique global adventure.
+            Slowik is the chief chef of a fine dine restaurant in a picturesque island resort and is an expert in his profession. In addition to serving food from his exotic menu he throws surprises at his guests during the course of the meal. Seated with other guests is a young couple who look forward to a pleasant evening but they find that as the evening progresses there are shocks in store for all the guests.
             </p>
             <div class="genre-tags">
-                <a class="btn btn-primary" href="/Genre/Action.html" role="button">Action</a>
-                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Adventure</a>
-                <a class="btn btn-primary" href="/Genre/Drama.html" role="button">Drama</a>
+                <a class="btn btn-primary" href="/Genre/Thriller.html" role="button">Thriller</a>
+                <a class="btn btn-primary" href="/Genre/Adventure.html" role="button">Mystery</a>
+                <a class="btn btn-primary" href="/Genre/Horror.html" role="button">Horror</a>
             </div>
         </div>
     </div>
@@ -163,13 +163,13 @@ try {
         <div id="reviewForm">
             <div class="reviewForm-container">
             <section class="left-form" style="width:35%;">
-                <img src="/Photos/AgeofUltron.webp" style="width:220px;border-radius:20px;margin-top:30px;">
+                <img src="/Photos/themenu.jpg" style="width:220px;border-radius:20px;margin-top:30px;">
             </section>
 
             <section class="right-form">
                 <h2 style="margin-top: 20px;">I've watched..</h2>
-                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">AVENGERS: AGE OF ULTRON
-                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2014</span>
+                <h1 style="font-family:Oswald;font-size:35px;font-weight: 700;text-shadow: 1px 1px 1px black;">THE MENU
+                <span style="font-size:25px;font-weight:400;font-family:Oswald;text-shadow: 1px 1px 1px black;color:#b8dbff">&nbsp2022</span>
                 </h1>
                 <form action="#" method="post">
 
@@ -286,7 +286,7 @@ try {
                 const params = new URLSearchParams();
                 params.append('reviewId', reviewId);
 
-                fetch('delete_ageofultron.php', {
+                fetch('delete_themenu.php', {
                     method: 'POST',
                     body: params
                 })
