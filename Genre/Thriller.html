@@ -15,33 +15,34 @@
 <body>
 
     <header>
+        <div class="logo">CSFFilmReview</div>
         <section class="header-center">
-            <div id="sidebar" class="sidebar">
-                <label>
-                    <input type="checkbox" class="checkbox" id="toggle">
-                    <div class="toggle">
-                        <span class="top_line common"></span>
-                        <span class="middle_line common"></span>
-                        <span class="bottom_line common"></span>
+            <nav>
+                <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html" class="active">Home</a>
+                <div class="dropdown-genre">
+                <a href="#">Genre</a>
+                    <div class="dropdown-content">
+                        <a href="/Genre/Action.html">Action</a>
+                        <a href="/Genre/Adventure.html">Adventure</a>
+                        <a href="/Genre/Comedy.html">Comedy</a>
+                        <a href="/Genre/Crime.html">Crime</a>
+                        <a href="/Genre/Drama.html">Drama</a>
+                        <a href="/Genre/Horror.html">Horror</a>
+                        <a href="/Genre/Mystery.html">Mystery</a>
+                        <a href="/Genre/Romance.html">Romance</a>
+                        <a href="/Genre/Sci-fi.html">Sci-fi</a>
+                        <a href="/Genre/Thriller.html">Thriller</a>
                     </div>
-                    <div class="slide">
-                        <p class="Close">Close</p>
-                        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html"><i class="fas fa-home"></i>&nbsp Homepage</a>
-                        <a href="/Genre/Genre.html"><i class="fas fa-film"></i>&nbsp Genre</a>
-                        <a href="/Genre/MovieList.html"><i class="fas fa-list"></i>&nbsp Movie List</a>
-                        <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/ContactUs.html"><i class="fas fa-envelope"></i>&nbsp Contact Us</a>
-                    </div>
-                </label>
-            </div>
-        
-    
+                </div>
+                <a href="/Genre/MovieList.html">Movie List</a>
+                <a href="/Handling/profile.php">Profile</a>
+                <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/homepage/index.html">Contact Us</a>
+            </nav>
+            </section>
             <div class="box">
                 <input type="text" id="searchInput" placeholder="Search Movie...">
                 <i class="fas fa-search" style = "color: #45525f;"></i>
-            </div>                
-        </section>
-    
-        <div class="logo">CSFFilmReview</div>
+            </div>
     </header>
 
 <div class="container">
@@ -198,7 +199,7 @@
 
         <!-- Seventh review -->
         <div class="review">
-            <a href="post.html?id=7" class="review-link">
+            <a href="/Film/It/it_reviews.php" class="review-link">
                 <div class="review-header">
                     <div class="review-content">
                         <div class="review-image">
@@ -219,7 +220,7 @@
 
         <!-- Eighth review -->
         <div class="review">
-            <a href="post.html?id=8" class="review-link">
+            <a href="/Film/It 2/it2_reviews.php" class="review-link">
                 <div class="review-header">
                     <div class="review-content">
                         <div class="review-image">
@@ -239,7 +240,7 @@
         </div>
 
         <div class="review">
-            <a href="post.html?id=8" class="review-link">
+            <a href="/Film/John Wick/johnwick_reviews.php" class="review-link">
                 <div class="review-header">
                     <div class="review-content">
                         <div class="review-image">
@@ -249,6 +250,46 @@
                                 <div class="genre-tags">
                                     <a href="/Genre/Thriller.html" class="genre">Thriller</a>
                                     <a href="/Genre/Action.html" class="genre">Action</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="/Film/Joker/joker_reviews.php" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/joker.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Joker</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Crime.html" class="genre">Crime</a>
+                                    <a href="/Genre/Thriller.html" class="genre">Thriller</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="/Film/Joker Folie à Deux/joker2_reviews.php" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/joker2.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">Joker: Folie à Deux</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Crime.html" class="genre">Crime</a>
+                                    <a href="/Genre/Thriller.html" class="genre">Thriller</a>
                                 </div>
                                 <div class="view-review">View Reviews</div>
                             </div>
@@ -319,7 +360,7 @@
         </div>
 
         <div class="review">
-            <a href="post.html?id=8" class="review-link">
+            <a href="/Film/The Dark Knight/thedarkknight.php" class="review-link">
                 <div class="review-header">
                     <div class="review-content">
                         <div class="review-image">
@@ -339,27 +380,7 @@
         </div>
 
         <div class="review">
-            <a href="post.html?id=8" class="review-link">
-                <div class="review-header">
-                    <div class="review-content">
-                        <div class="review-image">
-                            <img src="/Photos/f8.jpg" alt="Movie poster">
-                            <div class="overlay">
-                                <div class="movie-title">The Fate of the Furious</div>
-                                <div class="genre-tags">
-                                    <a href="/Genre/Thriller.html" class="genre">Thriller</a>
-                                    <a href="/Genre/Action.html" class="genre">Action</a>
-                                </div>
-                                <div class="view-review">View Reviews</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="review">
-            <a href="post.html?id=8" class="review-link">
+            <a href="/Film/The Fast and the Furious/thefastandthefurious_reviews.php" class="review-link">
                 <div class="review-header">
                     <div class="review-content">
                         <div class="review-image">
@@ -368,7 +389,7 @@
                                 <div class="movie-title">The Fast and the Furious</div>
                                 <div class="genre-tags">
                                     <a href="/Genre/Thriller.html" class="genre">Thriller</a>
-                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                    <a href="/Genre/Crime.html" class="genre">Crime</a>
                                 </div>
                                 <div class="view-review">View Reviews</div>
                             </div>
@@ -379,7 +400,7 @@
         </div>
 
         <div class="review">
-            <a href="post.html?id=8" class="review-link">
+            <a href="/Film/The Fast and the Furious Tokyo Drift/fastandfurioustokyo_reviews.php" class="review-link">
                 <div class="review-header">
                     <div class="review-content">
                         <div class="review-image">
@@ -388,7 +409,27 @@
                                 <div class="movie-title">The Fast and the Furious: Tokyo Drift</div>
                                 <div class="genre-tags">
                                     <a href="/Genre/Thriller.html" class="genre">Thriller</a>
-                                    <a href="/Genre/Action.html" class="genre">Action</a>
+                                    <a href="/Genre/Crime.html" class="genre">Crime</a>
+                                </div>
+                                <div class="view-review">View Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="review">
+            <a href="/Film/The Fate of the Furious/thefateofthefurious_reviews.php" class="review-link">
+                <div class="review-header">
+                    <div class="review-content">
+                        <div class="review-image">
+                            <img src="/Photos/f8.jpg" alt="Movie poster">
+                            <div class="overlay">
+                                <div class="movie-title">The Fate of the Furious</div>
+                                <div class="genre-tags">
+                                    <a href="/Genre/Crime.html" class="genre">Crime</a>
+                                    <a href="/Genre/Thriller.html" class="genre">Thriller</a>
                                 </div>
                                 <div class="view-review">View Reviews</div>
                             </div>
@@ -411,5 +452,25 @@
 </footer>
 
 <script src = "search.js"></script>
+<script>
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function() {
+        let header = document.querySelector("header");
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            header.classList.add("sticky");
+        } else {
+            // Scrolling up
+            if (scrollTop <= 0) {
+                header.classList.remove("sticky");
+            }
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+</script>
 </body>
 </html>

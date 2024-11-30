@@ -15,6 +15,8 @@
     align-items: center;
     background-image: url('sign.jpg');
     background-size: 1500px 735px; /* lebar dlu baru tinggi*/
+    background-image: url('bg.jpg');
+    background-size: 1500px 735px; /* lebar dlu baru tinggi*/
     color: #ffffff; 
   }
 
