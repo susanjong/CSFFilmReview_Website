@@ -161,6 +161,8 @@ button:hover {
     max-width: 200px; /* Adjust the max-width as needed */
     overflow: hidden;  /* Hide overflowed text */
     text-overflow: ellipsis;  /* Add ellipsis (...) for overflowed text */
+    background-color: #333333;
+    color: white;
 }
 
 .table-responsive {
