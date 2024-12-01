@@ -56,7 +56,7 @@ try {
             <a href="/PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/tampilan%20awal/film.html" class="btn btn-primary">Go to Film</a>
         </div>
 
-        <h1 class="text-center mb-4">User Data from All Tables</h1>
+        <h1 class="text-center mb-4 text-white">User Data from All Tables</h1>
         
         <?php if ($results && count($results) > 0): ?>
             <div class="table-responsive">
