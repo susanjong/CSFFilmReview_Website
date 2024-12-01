@@ -152,7 +152,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('/Photos/backdrop/Pokemon\ Detective\ Pikachu.png');
+    background-image: url('/Photos/backdrop/Rush\ Hour\ 2.png');
     border-color: transparent;
 }
 
@@ -168,7 +168,7 @@ body {
 .poster {
     width: 275px;
     height: 392px;
-    background-image: url('/Photos/pokemondp.jpg');
+    background-image: url('/Photos/rushhour2.jpg');
     margin-top: 23px;
     display: flex;
     background-size: cover;
@@ -394,7 +394,7 @@ hr {
     display: none; 
     position: fixed;
     width: 750px;
-    height: 550px;
+    height: 500px;
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
@@ -439,7 +439,7 @@ textarea {
 }
 
 .right-form {
-    width: 60%;
+    width: 62%;
     box-sizing: border-box;
     padding:0;
 }
