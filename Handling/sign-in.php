@@ -21,8 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user'] = $user['username'];
             $_SESSION['user_id'] = $user['id'];
 
-            // Redirect to homepage
-            header("Location:/PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/tampilan%20awal/film.html");
+            // Check if the email matches the admin's email
+            if ($email === 'fathur.6913@gmail.com') {
+                // Redirect to the admin panel for the specific user
+                header("Location: /adminpanel.php");
+            } else {
+                // Redirect to homepage for regular users
+                header("Location: /PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/tampilan%20awal/film.html");
+            }
 
             exit(); // Stop the script after redirecting
         } else {
