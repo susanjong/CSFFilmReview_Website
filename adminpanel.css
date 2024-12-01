@@ -10,7 +10,8 @@
 }
 
 body, html {
-    height: 100vh;
+    height: 1640vh;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -126,42 +127,42 @@ button:hover {
 }
 
 /* Admin Table */
+/* Admin Table */
 .table {
-    width: 80%; /* Table takes up 80% of the width */
+    width: 100%;
     border-collapse: collapse;
-    margin: 30px auto; /* Center the table horizontally */
-    table-layout: fixed; /* Fixed layout ensures columns have equal width */
+    margin-top: 30px;
+    
 }
 
 .table th, .table td {
-    padding: 16px;  /* Increased padding for larger columns */
-    border: 1px solid #ddd;
-    text-align: left;
-    font-size: 14px; /* Font size for better readability */
-    word-wrap: break-word; /* Ensures text will wrap inside cells */
-    white-space: normal;  /* Ensures text wraps within the cell */
+    padding: 12px;
+    border: 1px solid #141d70;
+    text-align: left; /* Default text alignment for table cells */
 }
 
 .table th {
-    background-color: #002244;
+    background-color: #003366;
     color: white;
-    font-size: 16px; /* Larger font size for headers */
+    text-align: center; /* Center the header text */
 }
 
 .table tbody tr:hover {
     background-color: #f4f4f4;
 }
 
+
 /* Optional: If some columns have longer text, apply max-width to make them more flexible */
 .table td {
-    max-width: 200px; /* Adjust the max-width as needed */
-    overflow: hidden;  /* Hide overflowed text */
-    text-overflow: ellipsis;  /* Add ellipsis (...) for overflowed text */
+    max-width: 200px;  */
+    overflow: hidden;  
+    text-overflow: ellipsis; 
 }
 
 .table-responsive {
     max-width: 100%;
     overflow-x: auto;
+    color: black;
 }
 
 /* Adjust the container to keep the table neat and centered */
