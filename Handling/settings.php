@@ -88,8 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_account'])) {
                 </div>
                 <div class="button-section text-center">
                     <button type="submit" name="update_profile" class="btn btn-primary">Save Changes</button>
-                    <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/tampilan awal/film.html" 
+                    <a href="/Handling/profile.php" 
                        class="btn btn-secondary">Cancel</a>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/PROJEK AKHIR_PEMWEB/PROJEK PEMWEB AKHIR/sign_form/update_password.html" 
+                        class="btn btn-info">Update Password</a>
                 </div>
                 <div class="text-center mt-4">
                     <button type="button" id="deleteAccountBtn" class="btn btn-danger">Delete Account</button>

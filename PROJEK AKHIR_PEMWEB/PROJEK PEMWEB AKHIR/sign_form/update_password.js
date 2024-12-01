@@ -10,6 +10,8 @@ window.onload = function() {
             errorMessage = 'New passwords do not match. Please try again.';
         } else if (error === 'email_not_found') {
             errorMessage = 'Email not found. Please check and try again.';
+        } else if (error === 'verification_failed') {
+            errorMessage = 'verification failed, please try again.';
         }
 
         if (errorMessage) {
