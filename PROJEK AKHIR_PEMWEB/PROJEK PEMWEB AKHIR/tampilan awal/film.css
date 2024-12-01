@@ -206,7 +206,7 @@ header a:hover{
 .thumbnail {
     position: absolute;
     top: 63%;
-    left: 57%;
+    left: 55%;
     z-index: 100;
     display: flex;
 }
@@ -275,7 +275,7 @@ header a:hover{
     align-items: center;
     position: absolute;
     top: 73%;
-    right:3.3%;
+    right: 1%;
     z-index: 100;
     display: flex;
     gap: 10px;
