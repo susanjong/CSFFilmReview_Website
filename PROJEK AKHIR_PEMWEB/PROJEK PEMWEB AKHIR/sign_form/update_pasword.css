@@ -109,6 +109,17 @@ button:hover {
     background-color: #0057b3b6; 
 }
 
+/* Styling for the Back button */
+form button[name="back_button"] {
+    background-color: #555555; /* Dark grey background */
+    color: white;
+    width: auto; /* Remove 100% width */
+}
+
+form button[name="back_button"]:hover {
+    background-color: #333333; /* Darker grey when hovered */
+}
+
 /* Link styling */
 a {
     text-decoration: none; 
