@@ -53,7 +53,7 @@ try {
     <div class="container mt-5">
         <!-- Go to Film Button -->
         <div class="text-center mb-4">
-            <a href="/PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/tampilan%20awal/film.html" class="btn btn-primary">Go to Film</a>
+            <a href="/PROJEK%20AKHIR_PEMWEB/PROJEK%20PEMWEB%20AKHIR/tampilan%20awal/film.html" class="btn btn-primary">Go to Homepage</a>
         </div>
 
         <h1 class="text-center mb-4 text-white">User Data from All Tables</h1>
