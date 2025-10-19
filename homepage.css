@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0; 
+}
+
+/* Background hanya untuk halaman pertama */
+.overview {
+    background-image: url("/asset/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh; /* Pastikan ini 100vh untuk mengisi seluruh tinggi layar */
+    position: relative;
+    color: black;
+}
+
+/* Box Element */
+.box {
+    height: 50px;  
+    width: 250px;       
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #eeeef6;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: width 0.8s ease; 
+    justify-content: center;
+    position: absolute; 
+    top: 6%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+}
+
+.box:hover {
+    width: 500px;  
+}
+
+.box input {
+    width: 100%; 
+    max-width: 500px;  
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: width 0.8s;  
+    background: transparent;
+    color: #333;  
+    padding: 0 10px;
+}
+
+/* Gaya untuk container utama */
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 2%; 
+    height: 100vh; /
+}
+
+/* Gaya di halaman untuk tombol */
+.button, .button2 {
+    background-color: #0E0E1A;
+    color: white;
+    transition: 0.6s;
+    box-shadow: 0px 0px 2px;
+    padding: 15px 40px; 
+    font-size: 18px; 
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    margin-top: 25%; /* Jarak vertikal dari tombol ke atas */
+}
+
+.button:hover, .button2:hover {
+    color: #585656;
+    background: white;
+}
+
+.button:active, .button2:active {
+    transform: scale(0.92);
+}
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 65px;
+    font-weight: 700;
+    font-family: "Kanit", sans-serif;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: center;
+    position: absolute; 
+    top: 43%; 
+    left: 50%; 
+    color: white;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Sesuaikan tinggi jika perlu */
+    font-size: 33px;
+    font-weight: 200;
+    font-family: "Kanit", sans-serif;
+    line-height: 1.3;
+    position: absolute;
+    top: 61%; /* Sesuaikan posisi top untuk memberikan jarak dari h1 */
+    left: 50%;
+    color: white;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Gaya untuk page kedua berissikan pengenalan anggota  */
+.content {
+    height: 100vh;
+    background-image: linear-gradient(black, #003366);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px; 
+}
+
+h2 {
+    font-size: 100px;
+    font-family: "Oswald", sans-serif;
+    background: linear-gradient(45deg, #ffffff, #7e8083);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Gaya untuk konten kedua */
+.container{
+    gap: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Gaya untuk card */
+.card {
+    width: 240px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: 0.5s;
+    padding: 70px 10px 20px; 
+    position: relative; 
+}
+
+.card img {
+    width: 110px; 
+    height: 110px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    position: absolute; 
+    top: -50px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border: 5px solid #fff;
+}
+
+.soc-icons {
+    gap: 10px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px;
+}
+
+.soc-icons i {
+    font-size: 25px; 
+    color: #858282;
+    border-radius: 5px; 
+    border: 1px solid #858282;
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: 0.5s;
+}
+
+.soc-icons i:hover{
+    color: #fff; 
+    background: #858282; 
+}
+
+.soc-icons a {
+    text-decoration: none; 
+}
+
+.name{
+    font-size: 20px; 
+    font-weight: 600; 
+    color: #333; 
+}
+
+.name i {
+    color: #003366; 
+}
+
+.description {
+    font-size: 14px; 
+    color: #858282; 
+    text-align: center; 
+}
+
+.subtitle {
+    font-size: 16px; 
+    color: #333; 
+    font-weight: 600;
+}
+
+.about-section {
+    padding: 0 25px;
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 15px; 
+}
+
+p {
+    margin: 5px 0; 
+    color: #858282;
+}
+
+/* untuk buat footer dibawah page*/
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    width: 100%;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-links a:hover,
+.footer-socials .soc-icon:hover {
+    color: #ffde59;
+}
+
+footer a {
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1px;
+}
+
+footer p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 13px;
+}
+footer a:hover{
+    color:#ffde59;
+}
+
+
+/* untuk ngatur ukuran di media mobile*/
+@media (max-width: 1200px) and (min-height: 400px) {
+    h1 {
+        font-size: 50px;
+    }
+    h4 {
+        font-size: 26px;
+    }
+    .button, .button2 {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+    .box {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 40px;
+    }
+    h4 {
+        font-size: 21px;
+    }
+    .content {
+        height: fit-content;
+        padding: 30px;
+        gap: 50px;
+
+    }
+    .card {
+        width: 200px;
+        padding: 50px 10px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    .box {
+        width: 90%;
+        top: 10%;
+    }
+    .button, .button2 {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .container {
+        gap: 30px;
+    }
+    .card {
+        width: 90%;
+    }
+}
+
