@@ -23,6 +23,7 @@ CSFFilmReview is a web-based platform designed to make it easier for users to ra
 4. Next, open the folder in VSCode using File > Open Folder and make sure you have a local server environment installed such as PostgreSQL, extension in VSCode (PHP Server, PHP intelephense, etc).
 5. Create a database.php file in every folder that needs database connection and paste this code:
 ![alt text](image.png)
+
 Replace the placeholders your_database, your_username, and your_password with your actual PostgreSQL credentials. Any PHP file that needs database access can simply use include 'database.php';
 7. Database Setup 
 Follow these steps: 
