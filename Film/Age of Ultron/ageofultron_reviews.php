@@ -1,12 +1,12 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
-include 'database.php'; // Pastikan file ini mengembalikan instance PDO
+include 'handling.php'; // Pastikan file ini mengembalikan instance PDO
 include 'delete_ageofultron.php';
 
 // Proses pengiriman review
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $komentar = isset($_POST['komentar']) ? trim($_POST['komentar']) : '';
-    $bintang = isset($_POST['bintang']) ? (int)$_POST['bintang'] : 0;
+    $bintang = isset($_POST['bintang']) ? (int)$_POST['bintang'] : 1;
     
     if (isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];

@@ -107,8 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_account'])) {
         <div class="modal-content">
             <p>Are you sure you want to delete your account? This action cannot be undone.</p>
             <div class="button-group">
-                <button id="confirmYes" class="btn btn-danger">Yes</button>
-                <button id="confirmNo" class="btn btn-secondary">No</button>
+                <button id="confirmNo" class="btn btn-danger">No</button>
+                <button id="confirmYes" class="btn btn-secondary">Yes</button>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-include 'database.php';
+include 'handling.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reviewId = isset($_POST['reviewId']) ? (int)$_POST['reviewId'] : null;

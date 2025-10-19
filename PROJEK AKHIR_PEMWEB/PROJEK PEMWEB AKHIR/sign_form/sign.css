@@ -42,7 +42,7 @@
   
   .front, .back {
     width: 100%;
-    height: 100%;
+    height: 117%;
     position: absolute;
     top: 0%;
     left: 0;
@@ -69,7 +69,7 @@
   h2 {
     text-align: center;
     margin-bottom: 25px;
-    font-size: 28px; /* Increased font size */
+    font-size: 28px; 
   }
 
   
@@ -134,12 +134,12 @@
   }
   
   .typewriter {
-    animation: repeat 13s steps(40) infinite; /* Menentukan total durasi animasi */
-    border-right: 2px solid rgba(255, 255, 255, 0.75); /* untuk kursor*/
+    animation: repeat 13s steps(40) infinite; 
+    border-right: 2px solid rgba(255, 255, 255, 0.75); 
   }
 
   h4.typewriter {
-    margin-bottom: 20px; /* Ubah nilai sesuai kebutuhan */
+    margin-bottom: 20px; 
 }
   
   .input-field {
@@ -172,7 +172,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 5%;
+    margin-top: 3%;
     font-size: 18px; 
   }
   
@@ -181,8 +181,8 @@
   }
   
   .switch {
-    text-align: center;
-    margin-top: 20px; 
+    text-align: right;
+    margin-top: 10px; 
     font-size: 16px; 
     color: #e2e2e2;
   }
@@ -207,11 +207,11 @@
     left: 10px;
     top: 70%;
     transform: translateY(-50%);
-    color: #9f9d9d; /* Icon color */
+    color: #9f9d9d; 
   }
   
   .input-field input {
-    padding-left: 2rem; /*untuk atur ikon dengan teks*/
+    padding-left: 2rem;
   }
 
   /* untuk atur bagian div dari remember me*/
@@ -223,20 +223,23 @@
 }
 
 .remember-me {
-    flex-grow: 1; /* Membuat "Remember Me" mengambil sisa ruang */
+    flex-grow: 1; 
 }
 
-/*untuk forgot password di sign in*/
+
+/* untuk forgot password di sign in */
 .forgot-password {
-    font-size: 14px; 
-    color: #0073ff; 
+    font-size: 14px;
+    color: #0073ff;
     text-decoration: none;
-    float: right;
-    margin-right: 10px;
-    text-align: right;
+    position: relative;
+    display: block;
+    width: 100%;           
+    text-align: right;    
+    margin-top: 8px;
+    margin-right: 0;
 }
 
 .forgot-password:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
-

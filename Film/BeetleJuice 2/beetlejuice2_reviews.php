@@ -1,6 +1,6 @@
 <?php
 session_start(); // Pastikan session sudah dimulai
-include 'database.php'; // Pastikan file ini mengembalikan instance PDO
+include 'handling.php'; // Pastikan file ini mengembalikan instance PDO
 include 'delete_beetlejuice2.php';
 
 // Proses pengiriman review
