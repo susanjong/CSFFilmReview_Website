@@ -3,7 +3,7 @@
 CSFFilmReview is a web-based platform designed to make it easier for users to rate and review movies they have watched. The platform provides multiple movie genres, allowing users to give ratings and write reviews for various films. The goal is to help users quickly find information about movies and make informed decisions about which films to watch based on other users’ reviews.
 
 ## Technologies Used
-- **Frontend:** HTML, CSS, JavaScript  
+- **Frontend:** HTML, CSS, and JavaScript  
 - **Backend:** PHP  
 - **Database:** PostgreSQL  
 - **Additional Libraries/Frameworks:** Bootstrap 5, Font Awesome  
@@ -24,7 +24,7 @@ CSFFilmReview is a web-based platform designed to make it easier for users to ra
 5. Create a database.php file in every folder that needs database connection and paste this code:
 ![alt text](image.png)
 Replace the placeholders your_database, your_username, and your_password with your actual PostgreSQL credentials. Any PHP file that needs database access can simply use include 'database.php';
-6. Database Setup 
+7. Database Setup 
 Follow these steps: 
 - Locate the database_backup.zip file in the project folder.
 - Extract the .zip file to get the .sql or .backup file.
@@ -51,7 +51,9 @@ Group 7
 2. Clarissa Halim (231401020)
 3. Ferarine (231401095)
 4. Fathurrahman Nasution (231401110)
+
 Class: KOM B (2023)
+
 Program: Computer Science
 Faculty: Faculty of Computer Science and Information Technology
 University: Universitas Sumatera Utara
