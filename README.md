@@ -2,6 +2,18 @@
 
 CSFFilmReview is a web-based platform designed to make it easier for users to rate and review movies they have watched. The platform provides multiple movie genres, allowing users to give ratings and write reviews for various films. The goal is to help users quickly find information about movies and make informed decisions about which films to watch based on other users’ reviews.
 
+CSFFilmReview is a web-based platform that enables users to perform full CRUD operations on movies and reviews. From an IT perspective:
+
+1. Create: Users can add new reviews and ratings for movies they have watched. The system allows users to input their personal opinions, rate the movie, and submit it to the platform.
+
+2. Read: Users can browse and read reviews written by others. They can search for movies by title, genre, or popularity, and view aggregated ratings and individual comments.
+
+3. Update: Users can edit their existing reviews and update their ratings. This ensures that users can modify their opinions over time.
+
+4. Delete: Users can remove their reviews if they no longer want them to appear on the platform.
+
+These CRUD operations make the website interactive and user-centered, allowing users to manage their contributions while exploring feedback from others. From a technical perspective, the platform likely uses a database (SQL) to store movies, users, ratings, and reviews, while the front-end and back-end communicate through HTTP requests.
+
 ## Technologies Used
 - **Frontend:** HTML, CSS, and JavaScript  
 - **Backend:** PHP  
