@@ -18,7 +18,8 @@ These CRUD operations make the website interactive and user-centered, allowing u
 - **Frontend:** HTML, CSS, and JavaScript  
 - **Backend:** PHP  
 - **Database:** PostgreSQL  
-- **Additional Libraries/Frameworks:** Bootstrap 5, Font Awesome  
+- **Additional Libraries/Frameworks:** Bootstrap 5, Font Awesome. 
+(Link: https://getbootstrap.com/ and https://fontawesome.com/)
 
 ## Main Features
 - User registration and login  
@@ -49,13 +50,13 @@ Follow these steps:
 7. If you want to run this website project, press the PHP Server logo on the top right side in Visual Studio Code.
 8. Finish
 
-## how to use this website 
+## How to Use This Website 
 1. Go to the main page, register or log in
 2. Select a movie from the list or by genre
 3. Add a review and star rating
 4. View the latest reviews and average movie rating
 
-Or you can open this youtube link for your guide ()
+Or you can open this youtube link for your guide (https://youtu.be/7ZVvp6BI7dQ?si=7-64FjCLm-71bI_N)
 
 
 ## Team Members
