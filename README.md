@@ -50,7 +50,8 @@ Follow these steps:
 7. If you want to run this website project, press the PHP Server logo on the top right side in Visual Studio Code.
 8. Finish
 
-## How to Use This Website 
+## How to Use This Website and Project Demonstration Video
+(https://youtu.be/7ZVvp6BI7dQ?si=LfddDomgYW0adV6d)
 1. Go to the main page, register or log in
 2. Select a movie from the list or by genre
 3. Add a review and star rating
@@ -66,9 +67,5 @@ Group 7
 3. Ferarine (231401095)
 4. Fathurrahman Nasution (231401110)
 
-Class: KOM B (2023)
 
-Program: Computer Science
-Faculty: Faculty of Computer Science and Information Technology
-University: Universitas Sumatera Utara
 
